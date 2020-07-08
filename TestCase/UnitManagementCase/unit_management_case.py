@@ -4,7 +4,7 @@
 @Author  : MaKaiQiang
 @File    : unit_management_case.py
 '''
-import HTMLTestRunnerCN
+
 import unittest
 import ddt
 from tools.get_excel_case import GetExcelCase

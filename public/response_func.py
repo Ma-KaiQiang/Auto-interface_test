@@ -39,7 +39,6 @@ class ResponseFunc():
             res = self.requests_func.post(url=url, params=params, headers=headers, body=body, json=json_)
             self.log.logger.debug(f'返回响应字串:{res}')
             if res:
-
                 return json.loads(res.text)
             else:
                 return False
