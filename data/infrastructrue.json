@@ -1,0 +1,228 @@
+{
+  "infrastructureType": "unit",
+  "buildingUuid": "d8e60a1999554fb1a5e97773ba652559",
+  "unitName": "1单元",
+  "roomsType": "commodity",
+  "roomsUse": "complete",
+  "templateFloors": [
+    {
+      "floor": 1,
+      "floorName": "1层",
+      "infrastructureUri": "1层"
+    },
+    {
+      "floor": 2,
+      "floorName": "2层",
+      "infrastructureUri": "2层"
+    },
+    {
+      "floor": 3,
+      "floorName": "3层",
+      "infrastructureUri": "3层"
+    },
+    {
+      "floor": 4,
+      "floorName": "4层",
+      "infrastructureUri": "4层"
+    },
+    {
+      "floor": 5,
+      "floorName": "5层",
+      "infrastructureUri": "5层"
+    },
+    {
+      "floor": 6,
+      "floorName": "6层",
+      "infrastructureUri": "6层"
+    },
+    {
+      "floor": 7,
+      "floorName": "7层",
+      "infrastructureUri": "7层"
+    },
+    {
+      "floor": 8,
+      "floorName": "8层",
+      "infrastructureUri": "8层"
+    },
+    {
+      "floor": 9,
+      "floorName": "9层",
+      "infrastructureUri": "9层"
+    },
+    {
+      "floor": 10,
+      "floorName": "10层",
+      "infrastructureUri": "10层"
+    },
+    {
+      "floor": 11,
+      "floorName": "11层",
+      "infrastructureUri": "11层"
+    },
+    {
+      "floor": 12,
+      "floorName": "12层",
+      "infrastructureUri": "12层"
+    },
+    {
+      "floor": 13,
+      "floorName": "13层",
+      "infrastructureUri": "13层"
+    },
+    {
+      "floor": 14,
+      "floorName": "14层",
+      "infrastructureUri": "14层"
+    },
+    {
+      "floor": 15,
+      "floorName": "15层",
+      "infrastructureUri": "15层"
+    },
+    {
+      "floor": 16,
+      "floorName": "16层",
+      "infrastructureUri": "16层"
+    },
+    {
+      "floor": 17,
+      "floorName": "17层",
+      "infrastructureUri": "17层"
+    },
+    {
+      "floor": 18,
+      "floorName": "18层",
+      "infrastructureUri": "18层"
+    },
+    {
+      "floor": 19,
+      "floorName": "19层",
+      "infrastructureUri": "19层"
+    },
+    {
+      "floor": 20,
+      "floorName": "20层",
+      "infrastructureUri": "20层"
+    },
+    {
+      "floor": 21,
+      "floorName": "21层",
+      "infrastructureUri": "21层"
+    },
+    {
+      "floor": 22,
+      "floorName": "22层",
+      "infrastructureUri": "22层"
+    },
+    {
+      "floor": 23,
+      "floorName": "23层",
+      "infrastructureUri": "23层"
+    },
+    {
+      "floor": 24,
+      "floorName": "24层",
+      "infrastructureUri": "24层"
+    },
+    {
+      "floor": 25,
+      "floorName": "25层",
+      "infrastructureUri": "25层"
+    },
+    {
+      "floor": 26,
+      "floorName": "26层",
+      "infrastructureUri": "26层"
+    },
+    {
+      "floor": 27,
+      "floorName": "27层",
+      "infrastructureUri": "27层"
+    },
+    {
+      "floor": 28,
+      "floorName": "28层",
+      "infrastructureUri": "28层"
+    },
+    {
+      "floor": 29,
+      "floorName": "29层",
+      "infrastructureUri": "29层"
+    },
+    {
+      "floor": 30,
+      "floorName": "30层",
+      "infrastructureUri": "30层"
+    },
+    {
+      "floor": 31,
+      "floorName": "31层",
+      "infrastructureUri": "31层"
+    },
+    {
+      "floor": 32,
+      "floorName": "32层",
+      "infrastructureUri": "32层"
+    },
+    {
+      "floor": 33,
+      "floorName": "33层",
+      "infrastructureUri": "33层"
+    },
+    {
+      "floor": 34,
+      "floorName": "34层",
+      "infrastructureUri": "34层"
+    },
+    {
+      "floor": 35,
+      "floorName": "35层",
+      "infrastructureUri": "35层"
+    },
+    {
+      "floor": 36,
+      "floorName": "36层",
+      "infrastructureUri": "36层"
+    },
+    {
+      "floor": 37,
+      "floorName": "37层",
+      "infrastructureUri": "37层"
+    },
+    {
+      "floor": 38,
+      "floorName": "38层",
+      "infrastructureUri": "38层"
+    },
+    {
+      "floor": 39,
+      "floorName": "39层",
+      "infrastructureUri": "39层"
+    },
+    {
+      "floor": 40,
+      "floorName": "40层",
+      "infrastructureUri": "40层"
+    }
+  ],
+  "templateRooms": [
+    {
+      "roomNo": "01",
+      "area": 100
+    },
+    {
+      "roomNo": "02",
+      "area": 100
+    },
+    {
+      "roomNo": "03",
+      "area": 100
+    },
+    {
+      "roomNo": "04",
+      "area": 100
+    }
+  ],
+  "differentFloor": []
+}
