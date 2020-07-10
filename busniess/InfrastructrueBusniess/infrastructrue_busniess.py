@@ -10,32 +10,44 @@ from tools.response_fileter_uuid import ResponseFilter
 from tools.write_excel import WriteExcel, copy_excel
 from public.response_func import ResponseFunc
 from tools.replace_data import ReplaceData
+from tools.get_excel_case import GetExcelCase
 
 
 class InfrastructureBusniess():
-    def __init__(self,old_excel_data):
+    def __init__(self):
         self.log = Logger()
         self.res = ResponseFunc()
         self.write_c = WriteConf()
         self.res_filter = ResponseFilter()
-        self.write_excel = WriteExcel(r'E:\Auto-interface\data\test_data.xlsx', '楼栋房屋')
-        self.replace = ReplaceData(old_excel_data)
-        self.num = 2
+        self.get_excel_uid = GetExcelCase(r'E:\Auto-interface\data\infrastructure\infrastructure_uuid.xlsx', '楼栋房屋')
+        self.write_excel = WriteExcel(r'E:\Auto-interface\data\infrastructure\infrastructure_uuid.xlsx', '楼栋房屋')
 
-    def infrastructure_busniess(self, **kwargs):
+    def infrastructure_add_busniess(self, old_excel_data, **kwargs):
+        replace = ReplaceData(old_excel_data, write_file_name=r'E:\Auto-interface\data\infrastructure\infrastructure_case.xlsx', write_sheet_name='楼栋房屋新增')
+        response = self.res.method(**kwargs)
+        # 获取行数
+        num = kwargs.get('row')
+        if response:
+            # 获取返回值的uuid
+            uuid = self.res_filter.data_filter(text=str(response), uuid='uuid', group=1)
+            self.log.logger.debug(f'uuid:{uuid} num:{num}')
+            # 将uuid写入到excel中
+            self.write_excel.write(num + 1, 1, str(uuid))
+            if kwargs.get('replace'):
+                replace.replace_data(num, uuid)
+
+            return response.get('msg')
+        else:
+            return False
+
+    def infrastructure_query_busniess(self, old_excel_data, **kwargs):
+        replace = ReplaceData(old_excel_data, write_file_name=r'E:\Auto-interface\data\infrastructure\infrastructure_case.xlsx', write_sheet_name='楼栋房屋查询')
         response = self.res.method(**kwargs)
         if response:
-            if kwargs.get('requests_type') == 'post':
-                uuid = self.res_filter.data_filter(text=str(response), uuid='uuid', group=1)
-                self.log.logger.debug(f'uuid:{uuid} num:{self.num}')
-                self.write_excel.write(self.num + 1, 1, str(uuid))
-                if self.num <= 7:
-                    self.replace.replace_data(self.num, uuid)
-                elif 7 < self.num <= 9:
-                    self.replace.replace_data(self.num, uuid, col=3)
-                # elif 9 < self.num <= 12:
-                #     self.replace.replace_data(self.num, col=4)
-
-                self.num += 1
-
-        return response.get('msg')
+            uuid = self.get_excel_uid.get_dict_data[0]['uuid']
+            num = kwargs.get('row')
+            if kwargs.get('replace'):
+                replace.replace_data(num, uuid)
+            return response.get('msg')
+        else:
+            return False

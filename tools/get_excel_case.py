@@ -7,7 +7,7 @@ import xlrd
 
 
 class GetExcelCase(object):
-    def __init__(self, fileName=r'E:\Auto-interface\data\case.xlsx', sheetName='云平台登录'):
+    def __init__(self, fileName, sheetName):
         self.work_book = xlrd.open_workbook(fileName)
         self.table = self.work_book.sheet_by_name(sheetName)
         self.colNum = self.table.ncols
@@ -47,7 +47,6 @@ class GetExcelCase(object):
                 # if s['execute'] == "1":
                 r.append(s)  # 把获取到行的数据装入r列表中
             return r  # 返回整个表的数据
-
 
 if __name__ == '__main__':
     g = GetExcelCase()

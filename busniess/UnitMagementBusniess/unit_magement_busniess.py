@@ -18,10 +18,9 @@ class UnitManagementBusniess():
         self.log = Logger()
         self.res = ResponseFunc()
         self.res_filter = ResponseFilter()
-        self.write_excel = WriteExcel(r'E:\Auto-interface\data\case.xlsx', '单位管理')
-        self.get_case_data = GetExcelCase(r'E:\Auto-interface\data\case.xlsx', '单位管理')
-        self.get_uuid = GetExcelCase(r'E:\Auto-interface\data\test_data.xlsx', '楼栋房屋')
-        self.replace_data = ReplaceData(self.get_case_data.get_dict_data, r'E:\Auto-interface\data\case.xlsx', '单位管理')
+        self.get_case_data = GetExcelCase(r'E:\Auto-interface\data\unit_management\unit_management_case.xlsx', '单位管理新增')
+        self.get_uuid = GetExcelCase(r'E:\Auto-interface\data\infrastructure\infrastructure_uuid.xlsx', '楼栋房屋')
+        self.replace_data = ReplaceData(self.get_case_data.get_dict_data, r'E:\Auto-interface\data\unit_management\unit_management_case.xlsx', '单位管理新增')
 
     def update_new_data(self):
         data = self.get_uuid.get_dict_data

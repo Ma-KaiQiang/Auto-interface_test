@@ -4,20 +4,19 @@
     <list default="true" id="d789da12-8ca8-45f2-8642-9c17a3920ecf" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TestCase/Infrastructure/infrastructure_case.py" beforeDir="false" afterPath="$PROJECT_DIR$/TestCase/Infrastructure/infrastructure_case.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestCase/LoginCase/login_test_case.py" beforeDir="false" afterPath="$PROJECT_DIR$/TestCase/LoginCase/login_test_case.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TestCase/UnitManagementCase/unit_management_case.py" beforeDir="false" afterPath="$PROJECT_DIR$/TestCase/UnitManagementCase/unit_management_case.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/busniess/InfrastructrueBusniess/infrastructrue_busniess.py" beforeDir="false" afterPath="$PROJECT_DIR$/busniess/InfrastructrueBusniess/infrastructrue_busniess.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/busniess/InfrastructrueBusniess/te.py" beforeDir="false" afterPath="$PROJECT_DIR$/busniess/InfrastructrueBusniess/te.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/busniess/UnitMagementBusniess/unit_magement_busniess.py" beforeDir="false" afterPath="$PROJECT_DIR$/busniess/UnitMagementBusniess/unit_magement_busniess.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conf/token.ini" beforeDir="false" afterPath="$PROJECT_DIR$/conf/token.ini" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/case.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/data/case.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/test_data.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/data/test_data.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/test_data.xlsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/response_func.py" beforeDir="false" afterPath="$PROJECT_DIR$/public/response_func.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/report/test_report.html" beforeDir="false" afterPath="$PROJECT_DIR$/report/test_report.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/run_main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/report/test_report.json" beforeDir="false" afterPath="$PROJECT_DIR$/report/test_report.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tools/get_excel_case.py" beforeDir="false" afterPath="$PROJECT_DIR$/tools/get_excel_case.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tools/replace_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/tools/replace_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tools/write_excel.py" beforeDir="false" afterPath="$PROJECT_DIR$/tools/write_excel.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -66,7 +65,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.run_main">
+  <component name="RunManager" selected="Python.infrastructure_case">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="Auto-interface" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -80,6 +79,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_case/test_case_01.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="infrastructrue_busniess" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Auto-interface" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\lll\AppData\Local\Programs\Python\Python38-32\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test_case" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/busniess/InfrastructrueBusniess/infrastructrue_busniess.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -109,7 +129,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="run_main" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="response_func" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Auto-interface" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -121,7 +141,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/run_main.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/public/response_func.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -151,56 +171,35 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="unit_magement_busniess" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Auto-interface" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/busniess/UnitMagementBusniess/unit_magement_busniess.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="pytest in login_test_case.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+    <configuration name="pytest in infrastructure_case.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="Auto-interface" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/TestCase/LoginCase" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/TestCase/Infrastructure" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_keywords" value="&quot;&quot;" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/TestCase/LoginCase/login_test_case.py&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/TestCase/Infrastructure/infrastructure_case.py&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.te" />
       <item itemvalue="Python.infrastructure_case" />
-      <item itemvalue="Python.run_main" />
-      <item itemvalue="Python.unit_magement_busniess" />
-      <item itemvalue="Python tests.pytest in login_test_case.py" />
+      <item itemvalue="Python.infrastructrue_busniess" />
+      <item itemvalue="Python.te" />
+      <item itemvalue="Python.response_func" />
+      <item itemvalue="Python tests.pytest in infrastructure_case.py" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.run_main" />
-        <item itemvalue="Python.unit_magement_busniess" />
         <item itemvalue="Python.infrastructure_case" />
-        <item itemvalue="Python tests.pytest in login_test_case.py" />
+        <item itemvalue="Python tests.pytest in infrastructure_case.py" />
+        <item itemvalue="Python.response_func" />
         <item itemvalue="Python.te" />
+        <item itemvalue="Python.infrastructrue_busniess" />
       </list>
     </recent_temporary>
   </component>
@@ -246,6 +245,13 @@
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">

@@ -14,7 +14,7 @@ from busniess.UnitMagementBusniess.unit_magement_busniess import UnitManagementB
 
 @ddt.ddt
 class UnitManangeTestCase(unittest.TestCase):
-    excel_data = GetExcelCase(sheetName='单位管理').get_dict_data
+    excel_data = GetExcelCase(fileName=r'E:\Auto-interface\data\login\login_case.xlsx', sheetName='单位管理新增').get_dict_data
 
     @classmethod
     def setUpClass(cls) -> None:
@@ -26,8 +26,8 @@ class UnitManangeTestCase(unittest.TestCase):
     def test_01(self, **kwargs):
         self.log.logger.debug(kwargs)
         try:
-            response = self.unit_management_b.unit_management_busniess(**kwargs)
-            self.assertEqual(kwargs.get('result'), response, msg=f'"{kwargs.get("case")}" 用例执行失败')
+            actual_result = self.unit_management_b.unit_management_busniess(**kwargs)
+            self.assertEqual(kwargs.get('expected_result'), actual_result, msg=f'"{kwargs.get("case")}" 用例执行失败')
 
         except Exception as e:
             self.log.logger.info(e)

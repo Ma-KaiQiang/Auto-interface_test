@@ -2,7 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>接口自动化测试报告</title>
+    <title>My unit test</title>
     <meta name="generator" content="HTMLTestRunner 0.9.1"/>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
     <script type="text/javascript" src="test_report.json" charset="utf-8"></script>
@@ -462,13 +462,13 @@
     <div id="div_base">
         
     <div class='page-header'>
-        <h1 id="title">接口自动化测试报告</h1>
-    <p class='attribute'><strong>开始时间:</strong> 2020-07-09 18:18:16</p>
-<p class='attribute'><strong>运行时长:</strong> 0:00:07.558758</p>
-<p class='attribute'><strong>状态:</strong> 通过 11 失败 1 错误 15</p>
+        <h1 id="title">My unit test</h1>
+    <p class='attribute'><strong>开始时间:</strong> 2020-07-10 18:42:55</p>
+<p class='attribute'><strong>运行时长:</strong> 0:00:04.535900</p>
+<p class='attribute'><strong>状态:</strong> 通过 11</p>
 
     </div>
-    <!--<div style="float: left;width:50%;"><p class='description'>浏览器：Chrom/平台：windows</p></div>-->
+    <!--<div style="float: left;width:50%;"><p class='description'>This demonstrates the report output by HTMLTestRunner.</p></div>-->
     <div id="chartline" style="width:50%;height:400px;float:left;"></div>
     <div id="chart" style="width:50%;height:400px;float:left;"></div>
     <select name = "testTime" id = "testTime" style="height: 30px;height: 30px; width:250px;margin: 5px;margin-left: 0px" onchange="changeResult(this)">
@@ -479,11 +479,11 @@
         
     <div id="btn-group">
     <div class="btn-group btn-group-sm">
-        <a class="btn btn-primary" onclick='javascript:showCase(0)'>概要{ 40.74% }</a>
-        <a class="btn btn-warning" onclick='javascript:showCase(4)'>错误{ 15 }</a>
-        <a class="btn btn-danger" onclick='javascript:showCase(1)'>失败{ 1 }</a>
+        <a class="btn btn-primary" onclick='javascript:showCase(0)'>概要{ 100.00% }</a>
+        <a class="btn btn-warning" onclick='javascript:showCase(4)'>错误{ 0 }</a>
+        <a class="btn btn-danger" onclick='javascript:showCase(1)'>失败{ 0 }</a>
         <a class="btn btn-success" onclick='javascript:showCase(2)'>通过{ 11 }</a>
-        <a class="btn btn-info" onclick='javascript:showCase(3)'>所有{ 27 }</a>
+        <a class="btn btn-info" onclick='javascript:showCase(3)'>所有{ 11 }</a>
     </div>
     <p></p>
     <table id='result_table' class="table table-bordered">
@@ -506,700 +506,88 @@
             <th>错误截图</th>
         </tr>
         
-    <tr class='errorClass'>
-        <td>Infrastructure.infrastructure_case.InfrastructureCase</td>
-        <td>10</td>
+    <tr class='passClass'>
+        <td>InfrastructureCase</td>
+        <td>11</td>
+        <td>11</td>
         <td>0</td>
         <td>0</td>
-        <td>10</td>
-        <td><a href="javascript:showClassDetail('c1',10)">详情</a></td>
+        <td><a href="javascript:showClassDetail('c1',11)">详情</a></td>
         <td>&nbsp;</td>
     </tr>
 
-<tr id='ft1.1' class='none'>
-    <td class='errorCase'><div class='testcase'>test_01_01</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.1')" >
-        错误</a>
-
-    <div id='div_ft1.1' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-            <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.1').style.display = 'none' " >
-               [x]</a>
-        </div>
-        <pre>ft1.1: Traceback (most recent call last):
-  File "C:\Users\lll\AppData\Local\Programs\Python\Python38-32\lib\site-packages\ddt.py", line 145, in wrapper
-    return func(self, *args, **kwargs)
-  File "E:\Auto-interface\TestCase\Infrastructure\infrastructure_case.py", line 34, in test_01
-    raise e
-  File "E:\Auto-interface\TestCase\Infrastructure\infrastructure_case.py", line 30, in test_01
-    response = self.infrastructrue_b.infrastructure_busniess(**excel_data_1)
-  File "E:\Auto-interface\busniess\InfrastructrueBusniess\infrastructrue_busniess.py", line 31, in infrastructure_busniess
-    self.write_excel.write(self.num + 1, 1, str(uuid))
-  File "E:\Auto-interface\tools\write_excel.py", line 63, in write
-    self.wb.save(self.filename)  # 保存文件
-  File "C:\Users\lll\AppData\Local\Programs\Python\Python38-32\lib\site-packages\openpyxl\workbook\workbook.py", line 392, in save
-    save_workbook(self, filename)
-  File "C:\Users\lll\AppData\Local\Programs\Python\Python38-32\lib\site-packages\openpyxl\writer\excel.py", line 291, in save_workbook
-    archive = ZipFile(filename, 'w', ZIP_DEFLATED, allowZip64=True)
-  File "C:\Users\lll\AppData\Local\Programs\Python\Python38-32\lib\zipfile.py", line 1216, in __init__
-    self.fp = io.open(file, filemode)
-PermissionError: [Errno 13] Permission denied: 'E:\\Auto-interface\\data\\test_data.xlsx'
-</pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-    <td>无截图</td>
-</tr>
-
-<tr id='ft1.2' class='none'>
-    <td class='errorCase'><div class='testcase'>test_01_02</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.2')" >
-        错误</a>
-
-    <div id='div_ft1.2' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-            <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.2').style.display = 'none' " >
-               [x]</a>
-        </div>
-        <pre>ft1.2: Traceback (most recent call last):
-  File "C:\Users\lll\AppData\Local\Programs\Python\Python38-32\lib\site-packages\ddt.py", line 145, in wrapper
-    return func(self, *args, **kwargs)
-  File "E:\Auto-interface\TestCase\Infrastructure\infrastructure_case.py", line 34, in test_01
-    raise e
-  File "E:\Auto-interface\TestCase\Infrastructure\infrastructure_case.py", line 30, in test_01
-    response = self.infrastructrue_b.infrastructure_busniess(**excel_data_1)
-  File "E:\Auto-interface\busniess\InfrastructrueBusniess\infrastructrue_busniess.py", line 31, in infrastructure_busniess
-    self.write_excel.write(self.num + 1, 1, str(uuid))
-  File "E:\Auto-interface\tools\write_excel.py", line 63, in write
-    self.wb.save(self.filename)  # 保存文件
-  File "C:\Users\lll\AppData\Local\Programs\Python\Python38-32\lib\site-packages\openpyxl\workbook\workbook.py", line 392, in save
-    save_workbook(self, filename)
-  File "C:\Users\lll\AppData\Local\Programs\Python\Python38-32\lib\site-packages\openpyxl\writer\excel.py", line 291, in save_workbook
-    archive = ZipFile(filename, 'w', ZIP_DEFLATED, allowZip64=True)
-  File "C:\Users\lll\AppData\Local\Programs\Python\Python38-32\lib\zipfile.py", line 1216, in __init__
-    self.fp = io.open(file, filemode)
-PermissionError: [Errno 13] Permission denied: 'E:\\Auto-interface\\data\\test_data.xlsx'
-</pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-    <td>无截图</td>
-</tr>
-
-<tr id='ft1.3' class='none'>
-    <td class='errorCase'><div class='testcase'>test_01_03</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.3')" >
-        错误</a>
-
-    <div id='div_ft1.3' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-            <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.3').style.display = 'none' " >
-               [x]</a>
-        </div>
-        <pre>ft1.3: Traceback (most recent call last):
-  File "C:\Users\lll\AppData\Local\Programs\Python\Python38-32\lib\site-packages\ddt.py", line 145, in wrapper
-    return func(self, *args, **kwargs)
-  File "E:\Auto-interface\TestCase\Infrastructure\infrastructure_case.py", line 34, in test_01
-    raise e
-  File "E:\Auto-interface\TestCase\Infrastructure\infrastructure_case.py", line 30, in test_01
-    response = self.infrastructrue_b.infrastructure_busniess(**excel_data_1)
-  File "E:\Auto-interface\busniess\InfrastructrueBusniess\infrastructrue_busniess.py", line 31, in infrastructure_busniess
-    self.write_excel.write(self.num + 1, 1, str(uuid))
-  File "E:\Auto-interface\tools\write_excel.py", line 63, in write
-    self.wb.save(self.filename)  # 保存文件
-  File "C:\Users\lll\AppData\Local\Programs\Python\Python38-32\lib\site-packages\openpyxl\workbook\workbook.py", line 392, in save
-    save_workbook(self, filename)
-  File "C:\Users\lll\AppData\Local\Programs\Python\Python38-32\lib\site-packages\openpyxl\writer\excel.py", line 291, in save_workbook
-    archive = ZipFile(filename, 'w', ZIP_DEFLATED, allowZip64=True)
-  File "C:\Users\lll\AppData\Local\Programs\Python\Python38-32\lib\zipfile.py", line 1216, in __init__
-    self.fp = io.open(file, filemode)
-PermissionError: [Errno 13] Permission denied: 'E:\\Auto-interface\\data\\test_data.xlsx'
-</pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-    <td>无截图</td>
-</tr>
-
-<tr id='ft1.4' class='none'>
-    <td class='errorCase'><div class='testcase'>test_01_04</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.4')" >
-        错误</a>
-
-    <div id='div_ft1.4' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-            <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.4').style.display = 'none' " >
-               [x]</a>
-        </div>
-        <pre>ft1.4: Traceback (most recent call last):
-  File "C:\Users\lll\AppData\Local\Programs\Python\Python38-32\lib\site-packages\ddt.py", line 145, in wrapper
-    return func(self, *args, **kwargs)
-  File "E:\Auto-interface\TestCase\Infrastructure\infrastructure_case.py", line 34, in test_01
-    raise e
-  File "E:\Auto-interface\TestCase\Infrastructure\infrastructure_case.py", line 30, in test_01
-    response = self.infrastructrue_b.infrastructure_busniess(**excel_data_1)
-  File "E:\Auto-interface\busniess\InfrastructrueBusniess\infrastructrue_busniess.py", line 31, in infrastructure_busniess
-    self.write_excel.write(self.num + 1, 1, str(uuid))
-  File "E:\Auto-interface\tools\write_excel.py", line 63, in write
-    self.wb.save(self.filename)  # 保存文件
-  File "C:\Users\lll\AppData\Local\Programs\Python\Python38-32\lib\site-packages\openpyxl\workbook\workbook.py", line 392, in save
-    save_workbook(self, filename)
-  File "C:\Users\lll\AppData\Local\Programs\Python\Python38-32\lib\site-packages\openpyxl\writer\excel.py", line 291, in save_workbook
-    archive = ZipFile(filename, 'w', ZIP_DEFLATED, allowZip64=True)
-  File "C:\Users\lll\AppData\Local\Programs\Python\Python38-32\lib\zipfile.py", line 1216, in __init__
-    self.fp = io.open(file, filemode)
-PermissionError: [Errno 13] Permission denied: 'E:\\Auto-interface\\data\\test_data.xlsx'
-</pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-    <td>无截图</td>
-</tr>
-
-<tr id='ft1.5' class='none'>
-    <td class='errorCase'><div class='testcase'>test_01_05</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.5')" >
-        错误</a>
-
-    <div id='div_ft1.5' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-            <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.5').style.display = 'none' " >
-               [x]</a>
-        </div>
-        <pre>ft1.5: Traceback (most recent call last):
-  File "C:\Users\lll\AppData\Local\Programs\Python\Python38-32\lib\site-packages\ddt.py", line 145, in wrapper
-    return func(self, *args, **kwargs)
-  File "E:\Auto-interface\TestCase\Infrastructure\infrastructure_case.py", line 34, in test_01
-    raise e
-  File "E:\Auto-interface\TestCase\Infrastructure\infrastructure_case.py", line 30, in test_01
-    response = self.infrastructrue_b.infrastructure_busniess(**excel_data_1)
-  File "E:\Auto-interface\busniess\InfrastructrueBusniess\infrastructrue_busniess.py", line 31, in infrastructure_busniess
-    self.write_excel.write(self.num + 1, 1, str(uuid))
-  File "E:\Auto-interface\tools\write_excel.py", line 63, in write
-    self.wb.save(self.filename)  # 保存文件
-  File "C:\Users\lll\AppData\Local\Programs\Python\Python38-32\lib\site-packages\openpyxl\workbook\workbook.py", line 392, in save
-    save_workbook(self, filename)
-  File "C:\Users\lll\AppData\Local\Programs\Python\Python38-32\lib\site-packages\openpyxl\writer\excel.py", line 291, in save_workbook
-    archive = ZipFile(filename, 'w', ZIP_DEFLATED, allowZip64=True)
-  File "C:\Users\lll\AppData\Local\Programs\Python\Python38-32\lib\zipfile.py", line 1216, in __init__
-    self.fp = io.open(file, filemode)
-PermissionError: [Errno 13] Permission denied: 'E:\\Auto-interface\\data\\test_data.xlsx'
-</pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-    <td>无截图</td>
-</tr>
-
-<tr id='ft1.6' class='none'>
-    <td class='errorCase'><div class='testcase'>test_01_06</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.6')" >
-        错误</a>
-
-    <div id='div_ft1.6' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-            <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.6').style.display = 'none' " >
-               [x]</a>
-        </div>
-        <pre>ft1.6: Traceback (most recent call last):
-  File "C:\Users\lll\AppData\Local\Programs\Python\Python38-32\lib\site-packages\ddt.py", line 145, in wrapper
-    return func(self, *args, **kwargs)
-  File "E:\Auto-interface\TestCase\Infrastructure\infrastructure_case.py", line 34, in test_01
-    raise e
-  File "E:\Auto-interface\TestCase\Infrastructure\infrastructure_case.py", line 30, in test_01
-    response = self.infrastructrue_b.infrastructure_busniess(**excel_data_1)
-  File "E:\Auto-interface\busniess\InfrastructrueBusniess\infrastructrue_busniess.py", line 31, in infrastructure_busniess
-    self.write_excel.write(self.num + 1, 1, str(uuid))
-  File "E:\Auto-interface\tools\write_excel.py", line 63, in write
-    self.wb.save(self.filename)  # 保存文件
-  File "C:\Users\lll\AppData\Local\Programs\Python\Python38-32\lib\site-packages\openpyxl\workbook\workbook.py", line 392, in save
-    save_workbook(self, filename)
-  File "C:\Users\lll\AppData\Local\Programs\Python\Python38-32\lib\site-packages\openpyxl\writer\excel.py", line 291, in save_workbook
-    archive = ZipFile(filename, 'w', ZIP_DEFLATED, allowZip64=True)
-  File "C:\Users\lll\AppData\Local\Programs\Python\Python38-32\lib\zipfile.py", line 1216, in __init__
-    self.fp = io.open(file, filemode)
-PermissionError: [Errno 13] Permission denied: 'E:\\Auto-interface\\data\\test_data.xlsx'
-</pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-    <td>无截图</td>
-</tr>
-
-<tr id='ft1.7' class='none'>
-    <td class='errorCase'><div class='testcase'>test_01_07</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.7')" >
-        错误</a>
-
-    <div id='div_ft1.7' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-            <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.7').style.display = 'none' " >
-               [x]</a>
-        </div>
-        <pre>ft1.7: Traceback (most recent call last):
-  File "C:\Users\lll\AppData\Local\Programs\Python\Python38-32\lib\site-packages\ddt.py", line 145, in wrapper
-    return func(self, *args, **kwargs)
-  File "E:\Auto-interface\TestCase\Infrastructure\infrastructure_case.py", line 34, in test_01
-    raise e
-  File "E:\Auto-interface\TestCase\Infrastructure\infrastructure_case.py", line 30, in test_01
-    response = self.infrastructrue_b.infrastructure_busniess(**excel_data_1)
-  File "E:\Auto-interface\busniess\InfrastructrueBusniess\infrastructrue_busniess.py", line 31, in infrastructure_busniess
-    self.write_excel.write(self.num + 1, 1, str(uuid))
-  File "E:\Auto-interface\tools\write_excel.py", line 63, in write
-    self.wb.save(self.filename)  # 保存文件
-  File "C:\Users\lll\AppData\Local\Programs\Python\Python38-32\lib\site-packages\openpyxl\workbook\workbook.py", line 392, in save
-    save_workbook(self, filename)
-  File "C:\Users\lll\AppData\Local\Programs\Python\Python38-32\lib\site-packages\openpyxl\writer\excel.py", line 291, in save_workbook
-    archive = ZipFile(filename, 'w', ZIP_DEFLATED, allowZip64=True)
-  File "C:\Users\lll\AppData\Local\Programs\Python\Python38-32\lib\zipfile.py", line 1216, in __init__
-    self.fp = io.open(file, filemode)
-PermissionError: [Errno 13] Permission denied: 'E:\\Auto-interface\\data\\test_data.xlsx'
-</pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-    <td>无截图</td>
-</tr>
-
-<tr id='ft1.8' class='none'>
-    <td class='errorCase'><div class='testcase'>test_01_08</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.8')" >
-        错误</a>
-
-    <div id='div_ft1.8' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-            <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.8').style.display = 'none' " >
-               [x]</a>
-        </div>
-        <pre>ft1.8: Traceback (most recent call last):
-  File "C:\Users\lll\AppData\Local\Programs\Python\Python38-32\lib\site-packages\ddt.py", line 145, in wrapper
-    return func(self, *args, **kwargs)
-  File "E:\Auto-interface\TestCase\Infrastructure\infrastructure_case.py", line 34, in test_01
-    raise e
-  File "E:\Auto-interface\TestCase\Infrastructure\infrastructure_case.py", line 30, in test_01
-    response = self.infrastructrue_b.infrastructure_busniess(**excel_data_1)
-  File "E:\Auto-interface\busniess\InfrastructrueBusniess\infrastructrue_busniess.py", line 31, in infrastructure_busniess
-    self.write_excel.write(self.num + 1, 1, str(uuid))
-  File "E:\Auto-interface\tools\write_excel.py", line 63, in write
-    self.wb.save(self.filename)  # 保存文件
-  File "C:\Users\lll\AppData\Local\Programs\Python\Python38-32\lib\site-packages\openpyxl\workbook\workbook.py", line 392, in save
-    save_workbook(self, filename)
-  File "C:\Users\lll\AppData\Local\Programs\Python\Python38-32\lib\site-packages\openpyxl\writer\excel.py", line 291, in save_workbook
-    archive = ZipFile(filename, 'w', ZIP_DEFLATED, allowZip64=True)
-  File "C:\Users\lll\AppData\Local\Programs\Python\Python38-32\lib\zipfile.py", line 1216, in __init__
-    self.fp = io.open(file, filemode)
-PermissionError: [Errno 13] Permission denied: 'E:\\Auto-interface\\data\\test_data.xlsx'
-</pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-    <td>无截图</td>
-</tr>
-
-<tr id='ft1.9' class='none'>
-    <td class='errorCase'><div class='testcase'>test_01_09</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.9')" >
-        错误</a>
-
-    <div id='div_ft1.9' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-            <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.9').style.display = 'none' " >
-               [x]</a>
-        </div>
-        <pre>ft1.9: Traceback (most recent call last):
-  File "C:\Users\lll\AppData\Local\Programs\Python\Python38-32\lib\site-packages\ddt.py", line 145, in wrapper
-    return func(self, *args, **kwargs)
-  File "E:\Auto-interface\TestCase\Infrastructure\infrastructure_case.py", line 34, in test_01
-    raise e
-  File "E:\Auto-interface\TestCase\Infrastructure\infrastructure_case.py", line 30, in test_01
-    response = self.infrastructrue_b.infrastructure_busniess(**excel_data_1)
-  File "E:\Auto-interface\busniess\InfrastructrueBusniess\infrastructrue_busniess.py", line 31, in infrastructure_busniess
-    self.write_excel.write(self.num + 1, 1, str(uuid))
-  File "E:\Auto-interface\tools\write_excel.py", line 63, in write
-    self.wb.save(self.filename)  # 保存文件
-  File "C:\Users\lll\AppData\Local\Programs\Python\Python38-32\lib\site-packages\openpyxl\workbook\workbook.py", line 392, in save
-    save_workbook(self, filename)
-  File "C:\Users\lll\AppData\Local\Programs\Python\Python38-32\lib\site-packages\openpyxl\writer\excel.py", line 291, in save_workbook
-    archive = ZipFile(filename, 'w', ZIP_DEFLATED, allowZip64=True)
-  File "C:\Users\lll\AppData\Local\Programs\Python\Python38-32\lib\zipfile.py", line 1216, in __init__
-    self.fp = io.open(file, filemode)
-PermissionError: [Errno 13] Permission denied: 'E:\\Auto-interface\\data\\test_data.xlsx'
-</pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-    <td>无截图</td>
-</tr>
-
-<tr id='ft1.10' class='none'>
-    <td class='errorCase'><div class='testcase'>test_01_10</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.10')" >
-        错误</a>
-
-    <div id='div_ft1.10' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-            <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.10').style.display = 'none' " >
-               [x]</a>
-        </div>
-        <pre>ft1.10: Traceback (most recent call last):
-  File "C:\Users\lll\AppData\Local\Programs\Python\Python38-32\lib\site-packages\ddt.py", line 145, in wrapper
-    return func(self, *args, **kwargs)
-  File "E:\Auto-interface\TestCase\Infrastructure\infrastructure_case.py", line 34, in test_01
-    raise e
-  File "E:\Auto-interface\TestCase\Infrastructure\infrastructure_case.py", line 30, in test_01
-    response = self.infrastructrue_b.infrastructure_busniess(**excel_data_1)
-  File "E:\Auto-interface\busniess\InfrastructrueBusniess\infrastructrue_busniess.py", line 31, in infrastructure_busniess
-    self.write_excel.write(self.num + 1, 1, str(uuid))
-  File "E:\Auto-interface\tools\write_excel.py", line 63, in write
-    self.wb.save(self.filename)  # 保存文件
-  File "C:\Users\lll\AppData\Local\Programs\Python\Python38-32\lib\site-packages\openpyxl\workbook\workbook.py", line 392, in save
-    save_workbook(self, filename)
-  File "C:\Users\lll\AppData\Local\Programs\Python\Python38-32\lib\site-packages\openpyxl\writer\excel.py", line 291, in save_workbook
-    archive = ZipFile(filename, 'w', ZIP_DEFLATED, allowZip64=True)
-  File "C:\Users\lll\AppData\Local\Programs\Python\Python38-32\lib\zipfile.py", line 1216, in __init__
-    self.fp = io.open(file, filemode)
-PermissionError: [Errno 13] Permission denied: 'E:\\Auto-interface\\data\\test_data.xlsx'
-</pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-    <td>无截图</td>
-</tr>
-
-    <tr class='failClass'>
-        <td>LoginCase.login_test_case.LoginTestCase</td>
-        <td>8</td>
-        <td>7</td>
-        <td>1</td>
-        <td>0</td>
-        <td><a href="javascript:showClassDetail('c2',8)">详情</a></td>
-        <td>&nbsp;</td>
-    </tr>
-
-<tr id='pt2.1' class='hiddenRow'>
-    <td class='passCase'><div class='testcase'>test_01_1</div></td>
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_infrastructure_add_1</div></td>
     <td colspan='5' align='center'>通过</td>
     <td>无截图</td>
 </tr>
 
-<tr id='pt2.2' class='hiddenRow'>
-    <td class='passCase'><div class='testcase'>test_01_2</div></td>
+<tr id='pt1.2' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_infrastructure_add_10</div></td>
     <td colspan='5' align='center'>通过</td>
     <td>无截图</td>
 </tr>
 
-<tr id='ft2.3' class='none'>
-    <td class='failCase'><div class='testcase'>test_01_3</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.3')" >
-        失败</a>
-
-    <div id='div_ft2.3' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-            <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.3').style.display = 'none' " >
-               [x]</a>
-        </div>
-        <pre>ft2.3: Traceback (most recent call last):
-  File "C:\Users\lll\AppData\Local\Programs\Python\Python38-32\lib\site-packages\ddt.py", line 145, in wrapper
-    return func(self, *args, **kwargs)
-  File "E:\Auto-interface\TestCase\LoginCase\login_test_case.py", line 41, in test_01
-    raise e
-  File "E:\Auto-interface\TestCase\LoginCase\login_test_case.py", line 37, in test_01
-    self.assertEqual(args.get('result'), res.get('msg'), msg=f'"{args.get("case")}" 用例执行失败')
-AssertionError: '用户名或者密码不对' != '该账号没有权限，请联系管理员!'
-- 用户名或者密码不对
-+ 该账号没有权限，请联系管理员!
- : "004" 用例执行失败
-</pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-    <td>无截图</td>
-</tr>
-
-<tr id='pt2.4' class='hiddenRow'>
-    <td class='passCase'><div class='testcase'>test_01_4</div></td>
+<tr id='pt1.3' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_infrastructure_add_11</div></td>
     <td colspan='5' align='center'>通过</td>
     <td>无截图</td>
 </tr>
 
-<tr id='pt2.5' class='hiddenRow'>
-    <td class='passCase'><div class='testcase'>test_01_5</div></td>
+<tr id='pt1.4' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_infrastructure_add_2</div></td>
     <td colspan='5' align='center'>通过</td>
     <td>无截图</td>
 </tr>
 
-<tr id='pt2.6' class='hiddenRow'>
-    <td class='passCase'><div class='testcase'>test_01_6</div></td>
+<tr id='pt1.5' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_infrastructure_add_3</div></td>
     <td colspan='5' align='center'>通过</td>
     <td>无截图</td>
 </tr>
 
-<tr id='pt2.7' class='hiddenRow'>
-    <td class='passCase'><div class='testcase'>test_01_7</div></td>
+<tr id='pt1.6' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_infrastructure_add_4</div></td>
     <td colspan='5' align='center'>通过</td>
     <td>无截图</td>
 </tr>
 
-<tr id='pt2.8' class='hiddenRow'>
-    <td class='passCase'><div class='testcase'>test_01_8</div></td>
+<tr id='pt1.7' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_infrastructure_add_5</div></td>
     <td colspan='5' align='center'>通过</td>
     <td>无截图</td>
 </tr>
 
-    <tr class='errorClass'>
-        <td>UnitManagementCase.unit_management_case.UnitManangeTestCase</td>
-        <td>9</td>
-        <td>4</td>
-        <td>0</td>
-        <td>5</td>
-        <td><a href="javascript:showClassDetail('c3',9)">详情</a></td>
-        <td>&nbsp;</td>
-    </tr>
-
-<tr id='pt3.1' class='hiddenRow'>
-    <td class='passCase'><div class='testcase'>test_01_1</div></td>
+<tr id='pt1.8' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_infrastructure_add_6</div></td>
     <td colspan='5' align='center'>通过</td>
     <td>无截图</td>
 </tr>
 
-<tr id='ft3.2' class='none'>
-    <td class='errorCase'><div class='testcase'>test_01_2</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft3.2')" >
-        错误</a>
-
-    <div id='div_ft3.2' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-            <a onfocus='this.blur();' onclick="document.getElementById('div_ft3.2').style.display = 'none' " >
-               [x]</a>
-        </div>
-        <pre>ft3.2: Traceback (most recent call last):
-  File "C:\Users\lll\AppData\Local\Programs\Python\Python38-32\lib\site-packages\ddt.py", line 145, in wrapper
-    return func(self, *args, **kwargs)
-  File "E:\Auto-interface\TestCase\UnitManagementCase\unit_management_case.py", line 34, in test_01
-    raise e
-  File "E:\Auto-interface\TestCase\UnitManagementCase\unit_management_case.py", line 29, in test_01
-    response = self.unit_management_b.unit_management_busniess(**kwargs)
-  File "E:\Auto-interface\busniess\UnitMagementBusniess\unit_magement_busniess.py", line 34, in unit_management_busniess
-    response = self.res.method(**kwargs)
-  File "E:\Auto-interface\public\response_func.py", line 23, in method
-    json_ = eval(kwargs.get('json'))
-  File "&lt;string&gt;", line 1
-    {"companyName":"阿里巴巴","companyType":"social_org","infrastructureUuid":"f6255bdae5cc43d89822b6073b7be793","chargePersonName":"585","chargePersonPhone":"987","picture":""l,"newPicture":"","remarks":"最有钱的公司"}
-                                                                                                                                                                            ^
-SyntaxError: invalid syntax
-</pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-    <td>无截图</td>
-</tr>
-
-<tr id='ft3.3' class='none'>
-    <td class='errorCase'><div class='testcase'>test_01_3</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft3.3')" >
-        错误</a>
-
-    <div id='div_ft3.3' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-            <a onfocus='this.blur();' onclick="document.getElementById('div_ft3.3').style.display = 'none' " >
-               [x]</a>
-        </div>
-        <pre>ft3.3: Traceback (most recent call last):
-  File "C:\Users\lll\AppData\Local\Programs\Python\Python38-32\lib\site-packages\ddt.py", line 145, in wrapper
-    return func(self, *args, **kwargs)
-  File "E:\Auto-interface\TestCase\UnitManagementCase\unit_management_case.py", line 34, in test_01
-    raise e
-  File "E:\Auto-interface\TestCase\UnitManagementCase\unit_management_case.py", line 29, in test_01
-    response = self.unit_management_b.unit_management_busniess(**kwargs)
-  File "E:\Auto-interface\busniess\UnitMagementBusniess\unit_magement_busniess.py", line 36, in unit_management_busniess
-    return response.get('msg')
-AttributeError: 'bool' object has no attribute 'get'
-</pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-    <td>无截图</td>
-</tr>
-
-<tr id='ft3.4' class='none'>
-    <td class='errorCase'><div class='testcase'>test_01_4</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft3.4')" >
-        错误</a>
-
-    <div id='div_ft3.4' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-            <a onfocus='this.blur();' onclick="document.getElementById('div_ft3.4').style.display = 'none' " >
-               [x]</a>
-        </div>
-        <pre>ft3.4: Traceback (most recent call last):
-  File "C:\Users\lll\AppData\Local\Programs\Python\Python38-32\lib\site-packages\ddt.py", line 145, in wrapper
-    return func(self, *args, **kwargs)
-  File "E:\Auto-interface\TestCase\UnitManagementCase\unit_management_case.py", line 34, in test_01
-    raise e
-  File "E:\Auto-interface\TestCase\UnitManagementCase\unit_management_case.py", line 29, in test_01
-    response = self.unit_management_b.unit_management_busniess(**kwargs)
-  File "E:\Auto-interface\busniess\UnitMagementBusniess\unit_magement_busniess.py", line 34, in unit_management_busniess
-    response = self.res.method(**kwargs)
-  File "E:\Auto-interface\public\response_func.py", line 23, in method
-    json_ = eval(kwargs.get('json'))
-  File "&lt;string&gt;", line 1
-    {"companyName":"国家电网","companyType":"social_org","infrastructureUuid":"f6255bdae5cc43d89822b6073b7be793","chargePersonName":"879","chargePersonPhone":"654","picture":""newPicture":false,"remarks":""}
-                                                                                                                                                                            ^
-SyntaxError: invalid syntax
-</pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-    <td>无截图</td>
-</tr>
-
-<tr id='ft3.5' class='none'>
-    <td class='errorCase'><div class='testcase'>test_01_5</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft3.5')" >
-        错误</a>
-
-    <div id='div_ft3.5' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-            <a onfocus='this.blur();' onclick="document.getElementById('div_ft3.5').style.display = 'none' " >
-               [x]</a>
-        </div>
-        <pre>ft3.5: Traceback (most recent call last):
-  File "C:\Users\lll\AppData\Local\Programs\Python\Python38-32\lib\site-packages\ddt.py", line 145, in wrapper
-    return func(self, *args, **kwargs)
-  File "E:\Auto-interface\TestCase\UnitManagementCase\unit_management_case.py", line 34, in test_01
-    raise e
-  File "E:\Auto-interface\TestCase\UnitManagementCase\unit_management_case.py", line 29, in test_01
-    response = self.unit_management_b.unit_management_busniess(**kwargs)
-  File "E:\Auto-interface\busniess\UnitMagementBusniess\unit_magement_busniess.py", line 36, in unit_management_busniess
-    return response.get('msg')
-AttributeError: 'bool' object has no attribute 'get'
-</pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-    <td>无截图</td>
-</tr>
-
-<tr id='pt3.6' class='hiddenRow'>
-    <td class='passCase'><div class='testcase'>test_01_6</div></td>
+<tr id='pt1.9' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_infrastructure_add_7</div></td>
     <td colspan='5' align='center'>通过</td>
     <td>无截图</td>
 </tr>
 
-<tr id='pt3.7' class='hiddenRow'>
-    <td class='passCase'><div class='testcase'>test_01_7</div></td>
+<tr id='pt1.10' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_infrastructure_add_8</div></td>
     <td colspan='5' align='center'>通过</td>
     <td>无截图</td>
 </tr>
 
-<tr id='pt3.8' class='hiddenRow'>
-    <td class='passCase'><div class='testcase'>test_01_8</div></td>
+<tr id='pt1.11' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_infrastructure_add_9</div></td>
     <td colspan='5' align='center'>通过</td>
-    <td>无截图</td>
-</tr>
-
-<tr id='ft3.9' class='none'>
-    <td class='errorCase'><div class='testcase'>test_01_9</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft3.9')" >
-        错误</a>
-
-    <div id='div_ft3.9' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-            <a onfocus='this.blur();' onclick="document.getElementById('div_ft3.9').style.display = 'none' " >
-               [x]</a>
-        </div>
-        <pre>ft3.9: Traceback (most recent call last):
-  File "C:\Users\lll\AppData\Local\Programs\Python\Python38-32\lib\site-packages\ddt.py", line 145, in wrapper
-    return func(self, *args, **kwargs)
-  File "E:\Auto-interface\TestCase\UnitManagementCase\unit_management_case.py", line 34, in test_01
-    raise e
-  File "E:\Auto-interface\TestCase\UnitManagementCase\unit_management_case.py", line 29, in test_01
-    response = self.unit_management_b.unit_management_busniess(**kwargs)
-  File "E:\Auto-interface\busniess\UnitMagementBusniess\unit_magement_busniess.py", line 34, in unit_management_busniess
-    response = self.res.method(**kwargs)
-  File "E:\Auto-interface\public\response_func.py", line 21, in method
-    headers = eval(kwargs.get('headers'))
-  File "&lt;string&gt;", line 0
-    
-    ^
-SyntaxError: unexpected EOF while parsing
-</pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
     <td>无截图</td>
 </tr>
 
         <tr id='total_row'>
             <td>总计</td>
-            <td>27</td>
             <td>11</td>
-            <td>1</td>
-            <td>15</td>
+            <td>11</td>
+            <td>0</td>
+            <td>0</td>
             <td>&nbsp;</td>
             <th>&nbsp;</th>
         </tr>
@@ -1236,8 +624,8 @@ SyntaxError: unexpected EOF while parsing
                     center: ['50%', '60%'],
                     data:[
                         {value:11, name:'通过'},
-                        {value:1, name:'失败'},
-                        {value:15, name:'错误'}
+                        {value:0, name:'失败'},
+                        {value:0, name:'错误'}
                     ],
                     itemStyle: {
                         emphasis: {
