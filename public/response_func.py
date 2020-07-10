@@ -15,7 +15,6 @@ class ResponseFunc():
         self.log = Logger()
 
     def method(self, text=False, **kwargs):
-        case_node = kwargs.get('case')
         requests_type = kwargs.get('requests_type')
         url = kwargs.get('url')
         params = kwargs.get('paramas')
@@ -37,7 +36,7 @@ class ResponseFunc():
                 return False
         elif requests_type == 'post':
             res = self.requests_func.post(url=url, params=params, headers=headers, body=body, json=json_)
-            self.log.logger.debug(f'返回响应字串:{res}')
+            self.log.logger.debug(f'返回响应字串:{res.text}')
             if res:
                 return json.loads(res.text)
             else:

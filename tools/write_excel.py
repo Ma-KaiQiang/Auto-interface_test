@@ -9,7 +9,6 @@ import os
 
 from openpyxl.styles import Font, colors, Alignment
 
-
 """备份一份测试数据，以防进行写入表操作时导致表出现异常，表打不开数据丢失"""
 
 
@@ -52,7 +51,15 @@ class WriteExcel(object):
     def write(self, row, col, value, color=colors.BLACK):
         self.ws.cell(row, col).value = value  # 写入数据到指定单元格
         self.ws.cell(row, col).font = Font(color=color)
-        self.ws.cell(row, col).alignment = Alignment(horizontal='center', vertical='center')
+        '''
+        horizontal_alignments = (
+            "general", "left", "center", "right", "fill", "justify", "centerContinuous",
+            "distributed",)
+        vertical_aligments = (
+            "top", "center", "bottom", "justify", "distributed",)
+        '''
+
+        self.ws.cell(row, col).alignment = Alignment(horizontal='left', vertical='top')
         self.wb.save(self.filename)  # 保存文件
 
 

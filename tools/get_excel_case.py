@@ -12,14 +12,13 @@ class GetExcelCase(object):
         self.table = self.work_book.sheet_by_name(sheetName)
         self.colNum = self.table.ncols
         self.keys = self.table.row_values(0)
-
         self.log = Logger(level='debug')
 
     @property
     def get_rows(self):
         rows = self.table.nrows
         if rows > 1:
-            self.log.logger.debug(f'row:{self.table.nrows}')
+            # self.log.logger.debug(f'row:{self.table.nrows}')
             return rows
         else:
             return None
@@ -45,8 +44,8 @@ class GetExcelCase(object):
                 # 将每行数加入测试数据列表中,一遍写入数据调用
                 s['row'] = row
                 # self.log.logger.debug(f's{s}')
-                if s['execute'] == "1":
-                    r.append(s)  # 把获取到行的数据装入r列表中
+                # if s['execute'] == "1":
+                r.append(s)  # 把获取到行的数据装入r列表中
             return r  # 返回整个表的数据
 
 

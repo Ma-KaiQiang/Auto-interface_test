@@ -9,7 +9,6 @@ import unittest
 import ddt
 from tools.get_excel_case import GetExcelCase
 from tools.log import Logger
-from tools.write_conf import WriteConf
 from busniess.UnitMagementBusniess.unit_magement_busniess import UnitManagementBusniess
 
 
