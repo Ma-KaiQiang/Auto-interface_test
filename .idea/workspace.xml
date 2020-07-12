@@ -16,6 +16,9 @@
     </option>
   </component>
   <component name="ProjectId" id="1eI7j2WQ8EFZ17TshMUq3j0Ds3V" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/test_case/test_case_01.py" />
@@ -170,11 +173,11 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.unit_management_case" />
       <item itemvalue="Python.response_fileter_uuid" />
-      <item itemvalue="Python.write_excel" />
-      <item itemvalue="Python.send_email" />
       <item itemvalue="Python.run_main" />
+      <item itemvalue="Python.send_email" />
+      <item itemvalue="Python.unit_management_case" />
+      <item itemvalue="Python.write_excel" />
     </list>
     <recent_temporary>
       <list>
