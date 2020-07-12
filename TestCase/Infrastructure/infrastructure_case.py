@@ -1,0 +1,106 @@
+# coding:utf8
+import unittest
+import ddt
+import HTMLTestRunner_Chart
+from tools.get_excel_case import GetExcelCase
+from tools.log import Logger
+from tools.write_conf import WriteConf
+from busniess.InfrastructrueBusniess.infrastructrue_busniess import InfrastructureBusniess
+
+delete_excel_data = GetExcelCase(fileName=r'E:\Auto-interface\data\infrastructure\infrastructure_case.xlsx', sheetName='楼栋房屋删除').get_dict_data
+add_excel_data = GetExcelCase(fileName=r'E:\Auto-interface\data\infrastructure\infrastructure_case.xlsx', sheetName='楼栋房屋新增').get_dict_data
+query_excel_data = GetExcelCase(fileName=r'E:\Auto-interface\data\infrastructure\infrastructure_case.xlsx', sheetName='楼栋房屋查询').get_dict_data
+modify_excel_data = GetExcelCase(fileName=r'E:\Auto-interface\data\infrastructure\infrastructure_case.xlsx', sheetName='楼栋房屋修改').get_dict_data
+
+
+@ddt.ddt
+class InfrastructureCase(unittest.TestCase):
+
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.log = Logger()
+        cls.infrastructrue_b = InfrastructureBusniess()
+
+    @ddt.data(*add_excel_data)
+    @ddt.unpack
+    # @unittest.skip
+    def test_1_infrastructure_add(self, **kwargs):
+        try:
+            col_num = kwargs.get('row') - 1
+            excel_data_1 = GetExcelCase(fileName=r'E:\Auto-interface\data\infrastructure\infrastructure_case.xlsx', sheetName='楼栋房屋新增').get_dict_data[col_num]
+            self.log.logger.debug(f'获取的测试数据：{excel_data_1}')
+            actual_result = self.infrastructrue_b.infrastructure_add_busniess(add_excel_data, **excel_data_1)
+            self.assertEqual(excel_data_1.get('expected_result'), actual_result, msg=f'"{excel_data_1.get("case")}" 用例执行失败')
+        except Exception as e:
+            self.log.logger.info(e)
+            raise e
+        else:
+            self.log.logger.info(f'"{excel_data_1.get("case")}"用例执行通过')
+
+    @ddt.data(*query_excel_data)
+    @ddt.unpack
+    # @unittest.skip
+    def test_2_infrastructure_query(self, **kwargs):
+        try:
+            num = kwargs.get('row') - 1
+            self.log.logger.debug(f"kwrow:{num}")
+            excel_data_1 = GetExcelCase(fileName=r'E:\Auto-interface\data\infrastructure\infrastructure_case.xlsx', sheetName='楼栋房屋查询').get_dict_data[num]
+            self.log.logger.debug(f'获取的测试数据：{excel_data_1}')
+            actual_result = self.infrastructrue_b.infrastructure_query_busniess(query_excel_data, **excel_data_1)
+            self.assertTrue(actual_result, '请求失败')
+            self.assertEqual(excel_data_1.get('expected_result'), actual_result, msg=f'{excel_data_1.get("case")}用例执行失败')
+        except Exception as e:
+            self.log.logger.info(e)
+            raise e
+        else:
+            self.log.logger.info(f'"{excel_data_1.get("case")}"用例执行通过')
+
+    @ddt.data(*modify_excel_data)
+    @ddt.unpack
+    # @unittest.skip
+    def test_3_infrastructure_modify(self, **kwargs):
+        try:
+            num = kwargs.get('row') - 1
+            actual_result = self.infrastructrue_b.infrastructure_modify_busniess(num, modify_excel_data, **kwargs)
+            self.assertTrue(actual_result, '请求失败')
+            self.assertEqual(kwargs.get('expected_result'), actual_result, msg=f'失败用例：{kwargs.get("case")}\n服务器返回内容：{actual_result}')
+        except Exception as e:
+            self.log.logger.info(e)
+            raise e
+        else:
+            self.log.logger.info(f'"{kwargs.get("case")}"用例执行通过')
+
+    @ddt.data(*delete_excel_data)
+    @ddt.unpack
+    @unittest.skip
+    def test_4_infrastructure_delete(self, **kwargs):
+        try:
+            num = kwargs.get('row') - 1
+            actual_result = self.infrastructrue_b.infrastructure_delete_busniess(num, delete_excel_data, **kwargs)
+            self.assertTrue(actual_result, '请求失败')
+            self.assertEqual(kwargs.get('expected_result'), actual_result, msg=f'失败用例：{kwargs.get("case")}\n服务器返回内容：{actual_result}')
+        except Exception as e:
+            self.log.logger.info(e)
+            raise e
+        else:
+            self.log.logger.info(f'"{kwargs.get("case")}"用例执行通过')
+
+    # def tearDown(self) -> None:
+    #     global num
+    #     num += 1
+    # def tearDown(self) -> None:
+    #     global num
+    #     num += 1
+
+
+if __name__ == '__main__':
+    suite = unittest.makeSuite(InfrastructureCase, 'test_infrastructure_modify')
+    with open(r'E:\Auto-interface\report\test_report.html', 'wb') as fp:
+        runner = HTMLTestRunner_Chart.HTMLTestRunner(
+            stream=fp,
+            title='My unit test',
+            verbosity=2,
+            description='This demonstrates the report output by HTMLTestRunner.',
+        )
+        runner.run(suite)
+        fp.close()

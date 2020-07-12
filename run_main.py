@@ -5,7 +5,7 @@
 @File    : run_main.py
 '''
 from tools.send_email import SentEmail
-import HTMLTestRunnerCN
+import HTMLTestRunner_Chart
 import unittest
 
 
@@ -16,6 +16,6 @@ def run_all():
 
 if __name__ == '__main__':
     with open(r'E:\Auto-interface\report\test_report.html', 'wb') as fp:
-        runner = HTMLTestRunnerCN.HTMLTestRunner(stream=fp, verbosity=2, title='接口自动化测试报告', description='浏览器：Chrom/平台：windows', tester='MaKaiQiang')
+        runner = HTMLTestRunner_Chart.HTMLTestRunner(stream=fp, verbosity=2, title='接口自动化测试报告', description='浏览器：Chrom/平台：windows')
         runner.run(run_all())
     SentEmail().sent_email()

@@ -13,7 +13,7 @@ class Logger(object):
         'crit': logging.CRITICAL
     }  # 日志级别关系映射
 
-    def __init__(self, filename=FILENAME, level='debug', when='D', backCount=10,
+    def __init__(self, filename=FILENAME, level='debug', when='midnight', backCount=10,
                  fmt='%(asctime)s - %(pathname)s[line:%(lineno)d] - %(levelname)s: %(message)s'):
         self.logger = logging.getLogger(filename)
         if not self.logger.handlers:  # 判断是否已经添加了handler 如果存在直接进行写日志不在重复添加handler
