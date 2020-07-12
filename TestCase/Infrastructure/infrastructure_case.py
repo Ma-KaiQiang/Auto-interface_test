@@ -7,13 +7,10 @@ from tools.log import Logger
 from tools.write_conf import WriteConf
 from busniess.InfrastructrueBusniess.infrastructrue_busniess import InfrastructureBusniess
 
-# 此处后续还需使用其他复杂度更低的方式进行,比如获取工作表的有效行数造成迭代器放入ddt.data()
+delete_excel_data = GetExcelCase(fileName=r'E:\Auto-interface\data\infrastructure\infrastructure_case.xlsx', sheetName='楼栋房屋删除').get_dict_data
 add_excel_data = GetExcelCase(fileName=r'E:\Auto-interface\data\infrastructure\infrastructure_case.xlsx', sheetName='楼栋房屋新增').get_dict_data
 query_excel_data = GetExcelCase(fileName=r'E:\Auto-interface\data\infrastructure\infrastructure_case.xlsx', sheetName='楼栋房屋查询').get_dict_data
 modify_excel_data = GetExcelCase(fileName=r'E:\Auto-interface\data\infrastructure\infrastructure_case.xlsx', sheetName='楼栋房屋修改').get_dict_data
-
-
-# num = 0
 
 
 @ddt.ddt
@@ -27,10 +24,9 @@ class InfrastructureCase(unittest.TestCase):
     @ddt.data(*add_excel_data)
     @ddt.unpack
     # @unittest.skip
-    def test_infrastructure_add(self, **kwargs):
+    def test_1_infrastructure_add(self, **kwargs):
         try:
             col_num = kwargs.get('row') - 1
-            # self.log.logger.debug(f"kwrow:{col_num}")
             excel_data_1 = GetExcelCase(fileName=r'E:\Auto-interface\data\infrastructure\infrastructure_case.xlsx', sheetName='楼栋房屋新增').get_dict_data[col_num]
             self.log.logger.debug(f'获取的测试数据：{excel_data_1}')
             actual_result = self.infrastructrue_b.infrastructure_add_busniess(add_excel_data, **excel_data_1)
@@ -44,7 +40,7 @@ class InfrastructureCase(unittest.TestCase):
     @ddt.data(*query_excel_data)
     @ddt.unpack
     # @unittest.skip
-    def test_infrastructure_query(self, **kwargs):
+    def test_2_infrastructure_query(self, **kwargs):
         try:
             num = kwargs.get('row') - 1
             self.log.logger.debug(f"kwrow:{num}")
@@ -62,7 +58,7 @@ class InfrastructureCase(unittest.TestCase):
     @ddt.data(*modify_excel_data)
     @ddt.unpack
     # @unittest.skip
-    def test_infrastructure_modify(self, **kwargs):
+    def test_3_infrastructure_modify(self, **kwargs):
         try:
             num = kwargs.get('row') - 1
             actual_result = self.infrastructrue_b.infrastructure_modify_busniess(num, modify_excel_data, **kwargs)
@@ -74,6 +70,24 @@ class InfrastructureCase(unittest.TestCase):
         else:
             self.log.logger.info(f'"{kwargs.get("case")}"用例执行通过')
 
+    @ddt.data(*delete_excel_data)
+    @ddt.unpack
+    @unittest.skip
+    def test_4_infrastructure_delete(self, **kwargs):
+        try:
+            num = kwargs.get('row') - 1
+            actual_result = self.infrastructrue_b.infrastructure_delete_busniess(num, delete_excel_data, **kwargs)
+            self.assertTrue(actual_result, '请求失败')
+            self.assertEqual(kwargs.get('expected_result'), actual_result, msg=f'失败用例：{kwargs.get("case")}\n服务器返回内容：{actual_result}')
+        except Exception as e:
+            self.log.logger.info(e)
+            raise e
+        else:
+            self.log.logger.info(f'"{kwargs.get("case")}"用例执行通过')
+
+    # def tearDown(self) -> None:
+    #     global num
+    #     num += 1
     # def tearDown(self) -> None:
     #     global num
     #     num += 1

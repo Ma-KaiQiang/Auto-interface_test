@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="d789da12-8ca8-45f2-8642-9c17a3920ecf" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestCase/Infrastructure/infrastructure_case.py" beforeDir="false" afterPath="$PROJECT_DIR$/TestCase/Infrastructure/infrastructure_case.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/busniess/InfrastructrueBusniess/infrastructrue_busniess.py" beforeDir="false" afterPath="$PROJECT_DIR$/busniess/InfrastructrueBusniess/infrastructrue_busniess.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/infrastructure/infrastructure_case.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/data/infrastructure/infrastructure_case.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/infrastructure/infrastructure_uuid.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/data/infrastructure/infrastructure_uuid.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/log" afterDir="false" />
