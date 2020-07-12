@@ -33,13 +33,15 @@ class ReplaceData():
                 new_body = old_body.replace(compile_text, eval(str(uuid))[0])
                 self.write_excel.write(i, 6, new_body)
         if "url" in key_list:
-            compile_ = re.compile('([0-9a-z]{32})/house')
+            compile_ = re.compile('[0-9a-z]{32}')
             col=replace_col.get('url')
             for i in col:
                 old_body = self.old_excel_data[i - 2]['url']
                 self.log.logger.debug(f'old_body:{old_body}')
-                compile_text = compile_.search(old_body).group(1)
+                #获取末尾的uuid
+                compile_text = compile_.findall(old_body)[-1]
                 new_body = old_body.replace(compile_text, eval(str(uuid))[0])
+                self.log.logger.debug(f'new_body:{new_body}')
                 self.write_excel.write(i, 3, new_body)
         if "paramas" in key_list:
             compile_ = re.compile('[0-9a-z]{32}')

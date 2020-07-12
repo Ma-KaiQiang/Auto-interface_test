@@ -13,6 +13,7 @@ class ResponseFunc():
         self.log = Logger()
 
     def method(self, text=False, **kwargs):
+        self.log.logger.debug(f'请求参数：{kwargs}')
         requests_type = kwargs.get('requests_type')
         url = kwargs.get('url')
         params = kwargs.get('paramas')
