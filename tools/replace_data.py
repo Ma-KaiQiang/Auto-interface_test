@@ -27,18 +27,18 @@ class ReplaceData():
             # 获取须替换行
             col = replace_col.get('json')
             for i in col:
-                old_body = self.old_excel_data[i-2]['json']
+                old_body = self.old_excel_data[i - 2]['json']
                 self.log.logger.debug(f'old_body:{old_body}')
                 compile_text = compile_.search(old_body).group(0)
                 new_body = old_body.replace(compile_text, eval(str(uuid))[0])
                 self.write_excel.write(i, 6, new_body)
         if "url" in key_list:
             compile_ = re.compile('[0-9a-z]{32}')
-            col=replace_col.get('url')
+            col = replace_col.get('url')
             for i in col:
                 old_body = self.old_excel_data[i - 2]['url']
                 self.log.logger.debug(f'old_body:{old_body}')
-                #获取末尾的uuid
+                # 获取末尾的uuid
                 compile_text = compile_.findall(old_body)[-1]
                 new_body = old_body.replace(compile_text, eval(str(uuid))[0])
                 self.log.logger.debug(f'new_body:{new_body}')
@@ -54,23 +54,44 @@ class ReplaceData():
                 new_body = old_body.replace(compile_text, eval(str(uuid))[0])
                 self.write_excel.write(i, 4, new_body)
 
-        # if replace_col[0] == 'json':
-        #
-        # if col1 == 6:
-        #     compile_ = re.compile('[0-9a-z]{32}')
-        #     old_body = self.old_excel_data[row]['json']
-        #     compile_text = compile_.search(old_body).group(0)
-        # else:
-        #     compile_ = re.compile('([0-9a-z]{32})/house')
-        #     old_body = self.old_excel_data[row]['url']
-        #     self.log.logger.debug(f'old_body:{old_body}')
-        #     compile_text = compile_.search(old_body).group(1)
-        #
-        # self.log.logger.debug(f'get_excel:{compile_text}')
-        # new_body = old_body.replace(compile_text, eval(str(uuid))[0])
-        # self.log.logger.debug(eval(str(uuid))[0])
-        # self.write_excel.write(row + 2, col1, new_body)
+    def replace_data_sheet(self, uid_sheet):
+        for case in self.old_excel_data:
+            if case.get('replace'):
+                replace_data = eval(case.get('replace'))
+                self.log.logger.debug(f'replace_data:{replace_data}')
+                uid_col = replace_data.get('uid_col')
+                uuid = eval(uid_sheet[uid_col - 2].get('uuid'))
+                self.log.logger.debug(f'uuid:{uuid}')
+                key_list = [key[0] for key in replace_data.items()]
+                if "json" in key_list:
+                    compile_ = re.compile('[0-9a-z]{32}')
+                    old_json_data = case.get('json')
+                    self.log.logger.debug(f'old_body:{old_json_data}')
+                    compile_text = compile_.search(old_json_data).group(0)
+                    new_json_data = old_json_data.replace(compile_text, uuid[0])
+                    self.log.logger.debug(f'new_json_data:{new_json_data}')
+                    self.write_excel.write(case.get('row') + 1, 6, new_json_data)
+                    self.log.logger.debug('写入成功')
+                if "url" in key_list:
+                    compile_ = re.compile('[0-9a-z]{32}')
+                    old_url_data = case.get('url')
+                    compile_text = compile_.findall(old_url_data)[-1]
+                    new_url_data = old_url_data.replace(compile_text, uuid[0])
+                    self.log.logger.debug(f'replace_row{case.get("row")}')
+                    self.write_excel.write(case.get('row') + 1, 3, new_url_data)
+                    self.log.logger.debug('写入成功')
+                if "paramas" in key_list:
+                    compile_ = re.compile('[0-9a-z]{32}')
+                    # 获取须替换行
+                    old_paramas_data = case.get('paramas')
+                    compile_text = compile_.search(old_paramas_data).group(0)
+                    new_paramas_data = old_paramas_data.replace(compile_text, uuid[0])
+                    self.write_excel.write(case.get('row') + 1, 4, new_paramas_data)
+                    self.log.logger.debug('写入成功')
 
 
 if __name__ == '__main__':
-    r = ReplaceData()
+    old_data = GetExcelCase(fileName=r'E:\Auto-interface\data\unit_management\unit_management_case.xlsx', sheetName='单位管理新增').get_dict_data
+    uid_sheet = GetExcelCase(fileName=r'E:\Auto-interface\data\infrastructure\infrastructure_uuid.xlsx', sheetName='楼栋房屋').get_dict_data
+    r = ReplaceData(old_data, write_file_name=r'E:\Auto-interface\data\unit_management\unit_management_case.xlsx', write_sheet_name='单位管理新增')
+    r.replace_data_sheet(uid_sheet=uid_sheet)

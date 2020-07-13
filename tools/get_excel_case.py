@@ -48,6 +48,7 @@ class GetExcelCase(object):
                 r.append(s)  # 把获取到行的数据装入r列表中
             return r  # 返回整个表的数据
 
+
 if __name__ == '__main__':
     g = GetExcelCase()
     d = g.get_dict_data

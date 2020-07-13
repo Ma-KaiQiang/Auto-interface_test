@@ -463,9 +463,9 @@
         
     <div class='page-header'>
         <h1 id="title">My unit test</h1>
-    <p class='attribute'><strong>开始时间:</strong> 2020-07-12 13:11:36</p>
-<p class='attribute'><strong>运行时长:</strong> 0:00:01.649619</p>
-<p class='attribute'><strong>状态:</strong> 失败 11</p>
+    <p class='attribute'><strong>开始时间:</strong> 2020-07-13 13:26:57</p>
+<p class='attribute'><strong>运行时长:</strong> 0:00:00.320175</p>
+<p class='attribute'><strong>状态:</strong> 通过 2</p>
 
     </div>
     <!--<div style="float: left;width:50%;"><p class='description'>This demonstrates the report output by HTMLTestRunner.</p></div>-->
@@ -479,11 +479,11 @@
         
     <div id="btn-group">
     <div class="btn-group btn-group-sm">
-        <a class="btn btn-primary" onclick='javascript:showCase(0)'>概要{ 0.00% }</a>
+        <a class="btn btn-primary" onclick='javascript:showCase(0)'>概要{ 100.00% }</a>
         <a class="btn btn-warning" onclick='javascript:showCase(4)'>错误{ 0 }</a>
-        <a class="btn btn-danger" onclick='javascript:showCase(1)'>失败{ 11 }</a>
-        <a class="btn btn-success" onclick='javascript:showCase(2)'>通过{ 0 }</a>
-        <a class="btn btn-info" onclick='javascript:showCase(3)'>所有{ 11 }</a>
+        <a class="btn btn-danger" onclick='javascript:showCase(1)'>失败{ 0 }</a>
+        <a class="btn btn-success" onclick='javascript:showCase(2)'>通过{ 2 }</a>
+        <a class="btn btn-info" onclick='javascript:showCase(3)'>所有{ 2 }</a>
     </div>
     <p></p>
     <table id='result_table' class="table table-bordered">
@@ -506,384 +506,33 @@
             <th>错误截图</th>
         </tr>
         
-    <tr class='failClass'>
-        <td>InfrastructureCase</td>
-        <td>11</td>
+    <tr class='passClass'>
+        <td>UnitManangeTestCase</td>
+        <td>2</td>
+        <td>2</td>
         <td>0</td>
-        <td>11</td>
         <td>0</td>
-        <td><a href="javascript:showClassDetail('c1',11)">详情</a></td>
+        <td><a href="javascript:showClassDetail('c1',2)">详情</a></td>
         <td>&nbsp;</td>
     </tr>
 
-<tr id='ft1.1' class='none'>
-    <td class='failCase'><div class='testcase'>test_infrastructure_modify_01</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.1')" >
-        失败</a>
-
-    <div id='div_ft1.1' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-            <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.1').style.display = 'none' " >
-               [x]</a>
-        </div>
-        <pre>ft1.1: Traceback (most recent call last):
-  File "C:\Users\lll\AppData\Local\Programs\Python\Python38-32\lib\site-packages\ddt.py", line 145, in wrapper
-    return func(self, *args, **kwargs)
-  File "E:/Auto-interface/TestCase/Infrastructure/infrastructure_case.py", line 73, in test_infrastructure_modify
-    raise e
-  File "E:/Auto-interface/TestCase/Infrastructure/infrastructure_case.py", line 70, in test_infrastructure_modify
-    self.assertEqual(kwargs.get('expected_result'), actual_result, msg=f'失败用例：{kwargs.get("case")}\n服务器返回内容：{actual_result}')
-AssertionError: '操作成功' != '基建信息不存在'
-- 操作成功
-+ 基建信息不存在
- : 失败用例：001-修改小区名称
-服务器返回内容：基建信息不存在
-</pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_1_unit_management_add_1</div></td>
+    <td colspan='5' align='center'>通过</td>
     <td>无截图</td>
 </tr>
 
-<tr id='ft1.2' class='none'>
-    <td class='failCase'><div class='testcase'>test_infrastructure_modify_02</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.2')" >
-        失败</a>
-
-    <div id='div_ft1.2' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-            <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.2').style.display = 'none' " >
-               [x]</a>
-        </div>
-        <pre>ft1.2: Traceback (most recent call last):
-  File "C:\Users\lll\AppData\Local\Programs\Python\Python38-32\lib\site-packages\ddt.py", line 145, in wrapper
-    return func(self, *args, **kwargs)
-  File "E:/Auto-interface/TestCase/Infrastructure/infrastructure_case.py", line 73, in test_infrastructure_modify
-    raise e
-  File "E:/Auto-interface/TestCase/Infrastructure/infrastructure_case.py", line 70, in test_infrastructure_modify
-    self.assertEqual(kwargs.get('expected_result'), actual_result, msg=f'失败用例：{kwargs.get("case")}\n服务器返回内容：{actual_result}')
-AssertionError: '操作成功' != '基建信息不存在'
-- 操作成功
-+ 基建信息不存在
- : 失败用例：002-修改期数
-服务器返回内容：基建信息不存在
-</pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-    <td>无截图</td>
-</tr>
-
-<tr id='ft1.3' class='none'>
-    <td class='failCase'><div class='testcase'>test_infrastructure_modify_03</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.3')" >
-        失败</a>
-
-    <div id='div_ft1.3' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-            <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.3').style.display = 'none' " >
-               [x]</a>
-        </div>
-        <pre>ft1.3: Traceback (most recent call last):
-  File "C:\Users\lll\AppData\Local\Programs\Python\Python38-32\lib\site-packages\ddt.py", line 145, in wrapper
-    return func(self, *args, **kwargs)
-  File "E:/Auto-interface/TestCase/Infrastructure/infrastructure_case.py", line 73, in test_infrastructure_modify
-    raise e
-  File "E:/Auto-interface/TestCase/Infrastructure/infrastructure_case.py", line 70, in test_infrastructure_modify
-    self.assertEqual(kwargs.get('expected_result'), actual_result, msg=f'失败用例：{kwargs.get("case")}\n服务器返回内容：{actual_result}')
-AssertionError: '操作成功' != '基建信息不存在'
-- 操作成功
-+ 基建信息不存在
- : 失败用例：003-修改期数
-服务器返回内容：基建信息不存在
-</pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-    <td>无截图</td>
-</tr>
-
-<tr id='ft1.4' class='none'>
-    <td class='failCase'><div class='testcase'>test_infrastructure_modify_04</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.4')" >
-        失败</a>
-
-    <div id='div_ft1.4' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-            <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.4').style.display = 'none' " >
-               [x]</a>
-        </div>
-        <pre>ft1.4: Traceback (most recent call last):
-  File "C:\Users\lll\AppData\Local\Programs\Python\Python38-32\lib\site-packages\ddt.py", line 145, in wrapper
-    return func(self, *args, **kwargs)
-  File "E:/Auto-interface/TestCase/Infrastructure/infrastructure_case.py", line 73, in test_infrastructure_modify
-    raise e
-  File "E:/Auto-interface/TestCase/Infrastructure/infrastructure_case.py", line 70, in test_infrastructure_modify
-    self.assertEqual(kwargs.get('expected_result'), actual_result, msg=f'失败用例：{kwargs.get("case")}\n服务器返回内容：{actual_result}')
-AssertionError: '操作成功' != '基建信息不存在'
-- 操作成功
-+ 基建信息不存在
- : 失败用例：004-修改楼栋名称
-服务器返回内容：基建信息不存在
-</pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-    <td>无截图</td>
-</tr>
-
-<tr id='ft1.5' class='none'>
-    <td class='failCase'><div class='testcase'>test_infrastructure_modify_05</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.5')" >
-        失败</a>
-
-    <div id='div_ft1.5' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-            <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.5').style.display = 'none' " >
-               [x]</a>
-        </div>
-        <pre>ft1.5: Traceback (most recent call last):
-  File "C:\Users\lll\AppData\Local\Programs\Python\Python38-32\lib\site-packages\ddt.py", line 145, in wrapper
-    return func(self, *args, **kwargs)
-  File "E:/Auto-interface/TestCase/Infrastructure/infrastructure_case.py", line 73, in test_infrastructure_modify
-    raise e
-  File "E:/Auto-interface/TestCase/Infrastructure/infrastructure_case.py", line 70, in test_infrastructure_modify
-    self.assertEqual(kwargs.get('expected_result'), actual_result, msg=f'失败用例：{kwargs.get("case")}\n服务器返回内容：{actual_result}')
-AssertionError: '操作成功' != '基建信息不存在'
-- 操作成功
-+ 基建信息不存在
- : 失败用例：005-修改楼栋名称
-服务器返回内容：基建信息不存在
-</pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-    <td>无截图</td>
-</tr>
-
-<tr id='ft1.6' class='none'>
-    <td class='failCase'><div class='testcase'>test_infrastructure_modify_06</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.6')" >
-        失败</a>
-
-    <div id='div_ft1.6' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-            <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.6').style.display = 'none' " >
-               [x]</a>
-        </div>
-        <pre>ft1.6: Traceback (most recent call last):
-  File "C:\Users\lll\AppData\Local\Programs\Python\Python38-32\lib\site-packages\ddt.py", line 145, in wrapper
-    return func(self, *args, **kwargs)
-  File "E:/Auto-interface/TestCase/Infrastructure/infrastructure_case.py", line 73, in test_infrastructure_modify
-    raise e
-  File "E:/Auto-interface/TestCase/Infrastructure/infrastructure_case.py", line 70, in test_infrastructure_modify
-    self.assertEqual(kwargs.get('expected_result'), actual_result, msg=f'失败用例：{kwargs.get("case")}\n服务器返回内容：{actual_result}')
-AssertionError: '操作成功' != '基建信息不存在'
-- 操作成功
-+ 基建信息不存在
- : 失败用例：006-修改单元名称
-服务器返回内容：基建信息不存在
-</pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-    <td>无截图</td>
-</tr>
-
-<tr id='ft1.7' class='none'>
-    <td class='failCase'><div class='testcase'>test_infrastructure_modify_07</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.7')" >
-        失败</a>
-
-    <div id='div_ft1.7' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-            <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.7').style.display = 'none' " >
-               [x]</a>
-        </div>
-        <pre>ft1.7: Traceback (most recent call last):
-  File "C:\Users\lll\AppData\Local\Programs\Python\Python38-32\lib\site-packages\ddt.py", line 145, in wrapper
-    return func(self, *args, **kwargs)
-  File "E:/Auto-interface/TestCase/Infrastructure/infrastructure_case.py", line 73, in test_infrastructure_modify
-    raise e
-  File "E:/Auto-interface/TestCase/Infrastructure/infrastructure_case.py", line 70, in test_infrastructure_modify
-    self.assertEqual(kwargs.get('expected_result'), actual_result, msg=f'失败用例：{kwargs.get("case")}\n服务器返回内容：{actual_result}')
-AssertionError: '操作成功' != '基建信息不存在'
-- 操作成功
-+ 基建信息不存在
- : 失败用例：007-修改单元名称
-服务器返回内容：基建信息不存在
-</pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-    <td>无截图</td>
-</tr>
-
-<tr id='ft1.8' class='none'>
-    <td class='failCase'><div class='testcase'>test_infrastructure_modify_08</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.8')" >
-        失败</a>
-
-    <div id='div_ft1.8' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-            <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.8').style.display = 'none' " >
-               [x]</a>
-        </div>
-        <pre>ft1.8: Traceback (most recent call last):
-  File "C:\Users\lll\AppData\Local\Programs\Python\Python38-32\lib\site-packages\ddt.py", line 145, in wrapper
-    return func(self, *args, **kwargs)
-  File "E:/Auto-interface/TestCase/Infrastructure/infrastructure_case.py", line 73, in test_infrastructure_modify
-    raise e
-  File "E:/Auto-interface/TestCase/Infrastructure/infrastructure_case.py", line 70, in test_infrastructure_modify
-    self.assertEqual(kwargs.get('expected_result'), actual_result, msg=f'失败用例：{kwargs.get("case")}\n服务器返回内容：{actual_result}')
-AssertionError: '操作成功' != '基建信息不存在'
-- 操作成功
-+ 基建信息不存在
- : 失败用例：008-修改层级名称
-服务器返回内容：基建信息不存在
-</pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-    <td>无截图</td>
-</tr>
-
-<tr id='ft1.9' class='none'>
-    <td class='failCase'><div class='testcase'>test_infrastructure_modify_09</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.9')" >
-        失败</a>
-
-    <div id='div_ft1.9' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-            <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.9').style.display = 'none' " >
-               [x]</a>
-        </div>
-        <pre>ft1.9: Traceback (most recent call last):
-  File "C:\Users\lll\AppData\Local\Programs\Python\Python38-32\lib\site-packages\ddt.py", line 145, in wrapper
-    return func(self, *args, **kwargs)
-  File "E:/Auto-interface/TestCase/Infrastructure/infrastructure_case.py", line 73, in test_infrastructure_modify
-    raise e
-  File "E:/Auto-interface/TestCase/Infrastructure/infrastructure_case.py", line 70, in test_infrastructure_modify
-    self.assertEqual(kwargs.get('expected_result'), actual_result, msg=f'失败用例：{kwargs.get("case")}\n服务器返回内容：{actual_result}')
-AssertionError: '操作成功' != '基建信息不存在'
-- 操作成功
-+ 基建信息不存在
- : 失败用例：009-修改层级名称
-服务器返回内容：基建信息不存在
-</pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-    <td>无截图</td>
-</tr>
-
-<tr id='ft1.10' class='none'>
-    <td class='failCase'><div class='testcase'>test_infrastructure_modify_10</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.10')" >
-        失败</a>
-
-    <div id='div_ft1.10' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-            <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.10').style.display = 'none' " >
-               [x]</a>
-        </div>
-        <pre>ft1.10: Traceback (most recent call last):
-  File "C:\Users\lll\AppData\Local\Programs\Python\Python38-32\lib\site-packages\ddt.py", line 145, in wrapper
-    return func(self, *args, **kwargs)
-  File "E:/Auto-interface/TestCase/Infrastructure/infrastructure_case.py", line 73, in test_infrastructure_modify
-    raise e
-  File "E:/Auto-interface/TestCase/Infrastructure/infrastructure_case.py", line 70, in test_infrastructure_modify
-    self.assertEqual(kwargs.get('expected_result'), actual_result, msg=f'失败用例：{kwargs.get("case")}\n服务器返回内容：{actual_result}')
-AssertionError: '操作成功' != '基建信息不存在'
-- 操作成功
-+ 基建信息不存在
- : 失败用例：010-修改房间名称
-服务器返回内容：基建信息不存在
-</pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-    <td>无截图</td>
-</tr>
-
-<tr id='ft1.11' class='none'>
-    <td class='failCase'><div class='testcase'>test_infrastructure_modify_11</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.11')" >
-        失败</a>
-
-    <div id='div_ft1.11' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-            <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.11').style.display = 'none' " >
-               [x]</a>
-        </div>
-        <pre>ft1.11: Traceback (most recent call last):
-  File "C:\Users\lll\AppData\Local\Programs\Python\Python38-32\lib\site-packages\ddt.py", line 145, in wrapper
-    return func(self, *args, **kwargs)
-  File "E:/Auto-interface/TestCase/Infrastructure/infrastructure_case.py", line 73, in test_infrastructure_modify
-    raise e
-  File "E:/Auto-interface/TestCase/Infrastructure/infrastructure_case.py", line 70, in test_infrastructure_modify
-    self.assertEqual(kwargs.get('expected_result'), actual_result, msg=f'失败用例：{kwargs.get("case")}\n服务器返回内容：{actual_result}')
-AssertionError: '操作成功' != '基建信息不存在'
-- 操作成功
-+ 基建信息不存在
- : 失败用例：011-修改房间名称
-服务器返回内容：基建信息不存在
-</pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
+<tr id='pt1.2' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_1_unit_management_add_2</div></td>
+    <td colspan='5' align='center'>通过</td>
     <td>无截图</td>
 </tr>
 
         <tr id='total_row'>
             <td>总计</td>
-            <td>11</td>
+            <td>2</td>
+            <td>2</td>
             <td>0</td>
-            <td>11</td>
             <td>0</td>
             <td>&nbsp;</td>
             <th>&nbsp;</th>
@@ -920,8 +569,8 @@ AssertionError: '操作成功' != '基建信息不存在'
                     radius : '60%',
                     center: ['50%', '60%'],
                     data:[
-                        {value:0, name:'通过'},
-                        {value:11, name:'失败'},
+                        {value:2, name:'通过'},
+                        {value:0, name:'失败'},
                         {value:0, name:'错误'}
                     ],
                     itemStyle: {
