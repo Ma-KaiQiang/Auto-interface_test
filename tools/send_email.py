@@ -2,30 +2,45 @@
 '''
 @Time    : 2020/7/7 9:30
 @Author  : MaKaiQiang
-@File    : unit_management_case.py
+@File    : send_mail.py
 '''
 from smtplib import SMTP_SSL
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from email.header import Header
+import zipfile
 
 sent_info = {'sender': '1121624020@qq.com',
              'receviers': ['mkq@gato.com.cn'],
              'authorization_code': 'myokicbspdzsgjjc',
              'subject': '接口自动化测试项目'
              }
+files = [r'E:\Auto-interface\report\test_report.html', r'E:\Auto-interface\report\test_report.json',r'E:\Auto-interface\logs\log']  # 文件的位置，多个文件用“，”隔开
+zip_file = r'E:\Auto-interface\report\report.zip'  # 压缩包名字
+
+
+def zip_files(files, zip_name):
+    zip = zipfile.ZipFile(zip_name, 'w', zipfile.ZIP_DEFLATED)
+    for file in files:
+        print('compressing', file)
+        zip.write(file)
+    zip.close()
+
+
+
 
 
 class SentEmail():
 
-    def __init__(self,text=None):
+    def __init__(self, text=None):
         # 创建一个带附件的实例
-        text='''
+        text = '''
         各位好!
 
             附件为此次自动化测试运行结果，请收阅。
 
         '''
+        zip_files(files, zip_file)
         self.message = MIMEMultipart()
         self.message['From'] = Header("云平台自动化接口测试", 'utf-8')
         self.message['To'] = Header("云平台项目组", 'utf-8')
@@ -33,11 +48,11 @@ class SentEmail():
         # 邮件正文内容
         self.message.attach(MIMEText(text, 'plain', 'utf-8'))
         # 构造附件1，传送当前目录下的 report 文件
-        with open(r'E:\Auto-interface\report\test_report.html', 'rb') as fp:
+        with open(r'E:\Auto-interface\report\report.zip', 'rb') as fp:
             att1 = MIMEText(fp.read(), 'base64', 'utf-8')
             att1["Content-Type"] = 'application/octet-stream'
             # 这里的filename可以任意写，写什么名字，邮件中显示什么名字
-            att1["Content-Disposition"] = 'attachment; filename="AutoTestReport.html"'
+            att1["Content-Disposition"] = 'attachment; filename="AutoTestReport.zip"'
         self.message.attach(att1)
 
     # # 构造附件2，传送当前目录下的 runoob.txt 文件
@@ -58,5 +73,5 @@ class SentEmail():
 
 
 if __name__ == '__main__':
-    s=SentEmail()
+    s = SentEmail()
     s.sent_email()

@@ -58,7 +58,6 @@ class WriteExcel(object):
         vertical_aligments = (
             "top", "center", "bottom", "justify", "distributed",)
         '''
-
         self.ws.cell(row, col).alignment = Alignment(horizontal='left', vertical='top')
         self.wb.save(self.filename)  # 保存文件
 

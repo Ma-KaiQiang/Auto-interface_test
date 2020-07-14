@@ -46,7 +46,6 @@ class ResponseFunc():
                 self.log.logger.debug('返回响应字串')
                 return json.loads(res.text)
             else:
-
                 return False
         elif requests_type == 'delete':
             time.sleep(2)
@@ -65,6 +64,6 @@ if __name__ == '__main__':
     url = 'http://192.168.9.238:15000/basedata-v1/project/090c24d6fcd248af8b8e76c4ef8b2c74/initArea'
 
     r = ResponseFunc()
-    res = r.method(url=url,body=body,headers=headers)
+    res = r.method(url=url, body=body, headers=headers)
     print(res)
 #     assert (res['msg'] == '操作成功')
