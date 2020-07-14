@@ -463,9 +463,9 @@
         
     <div class='page-header'>
         <h1 id="title">接口自动化测试报告</h1>
-    <p class='attribute'><strong>开始时间:</strong> 2020-07-14 17:56:34</p>
-<p class='attribute'><strong>运行时长:</strong> 0:00:45.962137</p>
-<p class='attribute'><strong>状态:</strong> 通过 42 失败 4</p>
+    <p class='attribute'><strong>开始时间:</strong> 2020-07-14 19:17:50</p>
+<p class='attribute'><strong>运行时长:</strong> 0:00:46.082763</p>
+<p class='attribute'><strong>状态:</strong> 通过 44 失败 2</p>
 
     </div>
     <!--<div style="float: left;width:50%;"><p class='description'>浏览器：Chrom/平台：windows</p></div>-->
@@ -479,10 +479,10 @@
         
     <div id="btn-group">
     <div class="btn-group btn-group-sm">
-        <a class="btn btn-primary" onclick='javascript:showCase(0)'>概要{ 91.30% }</a>
+        <a class="btn btn-primary" onclick='javascript:showCase(0)'>概要{ 95.65% }</a>
         <a class="btn btn-warning" onclick='javascript:showCase(4)'>错误{ 0 }</a>
-        <a class="btn btn-danger" onclick='javascript:showCase(1)'>失败{ 4 }</a>
-        <a class="btn btn-success" onclick='javascript:showCase(2)'>通过{ 42 }</a>
+        <a class="btn btn-danger" onclick='javascript:showCase(1)'>失败{ 2 }</a>
+        <a class="btn btn-success" onclick='javascript:showCase(2)'>通过{ 44 }</a>
         <a class="btn btn-info" onclick='javascript:showCase(3)'>所有{ 46 }</a>
     </div>
     <p></p>
@@ -736,16 +736,18 @@
         <pre>ft4.5: Traceback (most recent call last):
   File "C:\Users\lll\AppData\Local\Programs\Python\Python38-32\lib\site-packages\ddt.py", line 145, in wrapper
     return func(self, *args, **kwargs)
-  File "E:\Auto-interface\TestCase\LoginCase\test_login_test_case.py", line 40, in test_login
+  File "E:\Auto-interface\TestCase\LoginCase\test_login_test_case.py", line 43, in test_login
     raise e
-  File "E:\Auto-interface\TestCase\LoginCase\test_login_test_case.py", line 34, in test_login
-    self.assertEqual(kwargs.get('expected_result'), res.get('msg'), msg=f'\n失败用例：{kwargs.get("case")}\n服务器返回内容：{res}')
+  File "E:\Auto-interface\TestCase\LoginCase\test_login_test_case.py", line 35, in test_login
+    self.assertEqual(kwargs.get('expected_result'), res[0].get('msg'), msg=f'\n失败用例：{kwargs.get("case")}\n服务器返回内容：{res[0]}\n响应时间：{res[1]}\n状态码：{res[2]}')
 AssertionError: '该账号没有权限，请联系管理员!' != '操作成功'
 - 该账号没有权限，请联系管理员!
 + 操作成功
  : 
 失败用例：云平台登录005/用户名包含大小写
-服务器返回内容：{'data': {'adminUser': {'accountType': 'project_admin', 'logUuid': '762a08a1-f9cd-4dfe-91f1-09235a043d44', 'projects': [{'platformLevel': 'levelOne', 'platformType': 'community', 'projectName': '自动化测试项目1', 'projectUuid': '090c24d6fcd248af8b8e76c4ef8b2c74'}], 'pwdMsg': 0, 'staffName': '', 'username': 'autocszh', 'useruuid': '5ee48402ccbc41cabab45f3214d022d1'}, 'token': {'accessToken': 'dc690308-4012-4408-986c-7dddc8efe203', 'bearerAccessToken': 'bearer dc690308-4012-4408-986c-7dddc8efe203', 'expiresIn': 1981813, 'refreshToken': '63ae449c-ec92-424c-bcca-f629a6db356b', 'scope': 'all,read,write', 'tokenType': 'bearer'}}, 'errCode': 0, 'msg': '操作成功', 'success': True}
+服务器返回内容：{'data': {'adminUser': {'accountType': 'project_admin', 'logUuid': 'f77ba717-bccc-4a16-8c87-0956a33f5548', 'projects': [{'platformLevel': 'levelOne', 'platformType': 'community', 'projectName': '自动化测试项目1', 'projectUuid': '090c24d6fcd248af8b8e76c4ef8b2c74'}], 'pwdMsg': 0, 'staffName': '', 'username': 'autocszh', 'useruuid': '5ee48402ccbc41cabab45f3214d022d1'}, 'token': {'accessToken': 'dc690308-4012-4408-986c-7dddc8efe203', 'bearerAccessToken': 'bearer dc690308-4012-4408-986c-7dddc8efe203', 'expiresIn': 1976938, 'refreshToken': '63ae449c-ec92-424c-bcca-f629a6db356b', 'scope': 'all,read,write', 'tokenType': 'bearer'}}, 'errCode': 0, 'msg': '操作成功', 'success': True}
+响应时间：0.251495
+状态码：200
 </pre>
     </div>
     <!--css div popup end-->
@@ -794,16 +796,18 @@ AssertionError: '该账号没有权限，请联系管理员!' != '操作成功'
         <pre>ft4.10: Traceback (most recent call last):
   File "C:\Users\lll\AppData\Local\Programs\Python\Python38-32\lib\site-packages\ddt.py", line 145, in wrapper
     return func(self, *args, **kwargs)
-  File "E:\Auto-interface\TestCase\LoginCase\test_login_test_case.py", line 40, in test_login
+  File "E:\Auto-interface\TestCase\LoginCase\test_login_test_case.py", line 43, in test_login
     raise e
-  File "E:\Auto-interface\TestCase\LoginCase\test_login_test_case.py", line 34, in test_login
-    self.assertEqual(kwargs.get('expected_result'), res.get('msg'), msg=f'\n失败用例：{kwargs.get("case")}\n服务器返回内容：{res}')
+  File "E:\Auto-interface\TestCase\LoginCase\test_login_test_case.py", line 35, in test_login
+    self.assertEqual(kwargs.get('expected_result'), res[0].get('msg'), msg=f'\n失败用例：{kwargs.get("case")}\n服务器返回内容：{res[0]}\n响应时间：{res[1]}\n状态码：{res[2]}')
 AssertionError: '用户名不正确' != '操作成功'
 - 用户名不正确
 + 操作成功
  : 
 失败用例：云平台登录010/用户名输入65位字符
-服务器返回内容：{'data': {'adminUser': {'accountType': 'project_admin', 'logUuid': '5b66933a-7a7e-433f-8ec7-783b75ce2e62', 'projects': [{'platformLevel': 'levelOne', 'platformType': 'community', 'projectName': '测试社区项目1', 'projectUuid': 'f3e9d9869010433fb241b4da9981a637'}, {'platformLevel': 'levelOne', 'platformType': 'community', 'projectName': '自动化测试项目1', 'projectUuid': '090c24d6fcd248af8b8e76c4ef8b2c74'}], 'pwdMsg': 0, 'staffName': '', 'username': 'cszh', 'useruuid': '8c92bb0c8c804cd68c4863079d8b57b9'}, 'token': {'accessToken': '730383f9-1fbd-4ab2-9d3a-33bdee5402b2', 'bearerAccessToken': 'bearer 730383f9-1fbd-4ab2-9d3a-33bdee5402b2', 'expiresIn': 1978498, 'refreshToken': 'b3a607b6-3cb3-405d-ad17-629ebe91e319', 'scope': 'all,read,write', 'tokenType': 'bearer'}}, 'errCode': 0, 'msg': '操作成功', 'success': True}
+服务器返回内容：{'data': {'adminUser': {'accountType': 'project_admin', 'logUuid': 'afae216b-c428-44ff-be5b-0fdb61a5f52b', 'projects': [{'platformLevel': 'levelOne', 'platformType': 'community', 'projectName': '测试社区项目1', 'projectUuid': 'f3e9d9869010433fb241b4da9981a637'}, {'platformLevel': 'levelOne', 'platformType': 'community', 'projectName': '自动化测试项目1', 'projectUuid': '090c24d6fcd248af8b8e76c4ef8b2c74'}], 'pwdMsg': 0, 'staffName': '', 'username': 'cszh', 'useruuid': '8c92bb0c8c804cd68c4863079d8b57b9'}, 'token': {'accessToken': '730383f9-1fbd-4ab2-9d3a-33bdee5402b2', 'bearerAccessToken': 'bearer 730383f9-1fbd-4ab2-9d3a-33bdee5402b2', 'expiresIn': 1973623, 'refreshToken': 'b3a607b6-3cb3-405d-ad17-629ebe91e319', 'scope': 'all,read,write', 'tokenType': 'bearer'}}, 'errCode': 0, 'msg': '操作成功', 'success': True}
+响应时间：0.294171
+状态码：200
 </pre>
     </div>
     <!--css div popup end-->
@@ -834,73 +838,25 @@ AssertionError: '用户名不正确' != '操作成功'
     <td>无截图</td>
 </tr>
 
-    <tr class='failClass'>
+    <tr class='passClass'>
         <td>UnitManagementCase.test02_unit_management_query.UnitManangementQuery</td>
         <td>2</td>
-        <td>0</td>
         <td>2</td>
+        <td>0</td>
         <td>0</td>
         <td><a href="javascript:showClassDetail('c6',2)">详情</a></td>
         <td>&nbsp;</td>
     </tr>
 
-<tr id='ft6.1' class='none'>
-    <td class='failCase'><div class='testcase'>test_unit_management_query_1</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft6.1')" >
-        失败</a>
-
-    <div id='div_ft6.1' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-            <a onfocus='this.blur();' onclick="document.getElementById('div_ft6.1').style.display = 'none' " >
-               [x]</a>
-        </div>
-        <pre>ft6.1: Traceback (most recent call last):
-  File "C:\Users\lll\AppData\Local\Programs\Python\Python38-32\lib\site-packages\ddt.py", line 145, in wrapper
-    return func(self, *args, **kwargs)
-  File "E:\Auto-interface\TestCase\UnitManagementCase\test02_unit_management_query.py", line 51, in test_unit_management_query
-    raise e
-  File "E:\Auto-interface\TestCase\UnitManagementCase\test02_unit_management_query.py", line 48, in test_unit_management_query
-    self.assertTrue(kwargs.get('expected_result') in str(actual_result), msg=f'失败用例：{kwargs.get("case")}\n服务器返回内容：{actual_result}')
-AssertionError: False is not true : 失败用例：单位管理查询001/按名称查找单位
-服务器返回内容：{'success': True, 'errCode': 0, 'msg': '操作成功', 'data': {'total': 0, 'list': []}}
-</pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
+<tr id='pt6.1' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_unit_management_query_1</div></td>
+    <td colspan='5' align='center'>通过</td>
     <td>无截图</td>
 </tr>
 
-<tr id='ft6.2' class='none'>
-    <td class='failCase'><div class='testcase'>test_unit_management_query_2</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft6.2')" >
-        失败</a>
-
-    <div id='div_ft6.2' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-            <a onfocus='this.blur();' onclick="document.getElementById('div_ft6.2').style.display = 'none' " >
-               [x]</a>
-        </div>
-        <pre>ft6.2: Traceback (most recent call last):
-  File "C:\Users\lll\AppData\Local\Programs\Python\Python38-32\lib\site-packages\ddt.py", line 145, in wrapper
-    return func(self, *args, **kwargs)
-  File "E:\Auto-interface\TestCase\UnitManagementCase\test02_unit_management_query.py", line 51, in test_unit_management_query
-    raise e
-  File "E:\Auto-interface\TestCase\UnitManagementCase\test02_unit_management_query.py", line 48, in test_unit_management_query
-    self.assertTrue(kwargs.get('expected_result') in str(actual_result), msg=f'失败用例：{kwargs.get("case")}\n服务器返回内容：{actual_result}')
-AssertionError: False is not true : 失败用例：单位管理查询002/按名称查找单位
-服务器返回内容：{'success': True, 'errCode': 0, 'msg': '操作成功', 'data': {'total': 0, 'list': []}}
-</pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
+<tr id='pt6.2' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_unit_management_query_2</div></td>
+    <td colspan='5' align='center'>通过</td>
     <td>无截图</td>
 </tr>
 
@@ -959,8 +915,8 @@ AssertionError: False is not true : 失败用例：单位管理查询002/按名�
         <tr id='total_row'>
             <td>总计</td>
             <td>46</td>
-            <td>42</td>
-            <td>4</td>
+            <td>44</td>
+            <td>2</td>
             <td>0</td>
             <td>&nbsp;</td>
             <th>&nbsp;</th>
@@ -997,8 +953,8 @@ AssertionError: False is not true : 失败用例：单位管理查询002/按名�
                     radius : '60%',
                     center: ['50%', '60%'],
                     data:[
-                        {value:42, name:'通过'},
-                        {value:4, name:'失败'},
+                        {value:44, name:'通过'},
+                        {value:2, name:'失败'},
                         {value:0, name:'错误'}
                     ],
                     itemStyle: {

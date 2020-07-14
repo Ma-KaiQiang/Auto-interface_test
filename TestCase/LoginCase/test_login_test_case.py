@@ -30,20 +30,23 @@ class LoginTestCase(unittest.TestCase):
     def test_login(self, **kwargs):
         try:
             res = self.res.method(**kwargs)
-            self.log.logger.debug(res)
-            self.assertEqual(kwargs.get('expected_result'), res.get('msg'), msg=f'\n失败用例：{kwargs.get("case")}\n服务器返回内容：{res}')
-            if res.get('msg') == '操作成功':
-                self.log.logger.info('登录成功，token信息更新至token.ini文件')
-                self.write_c.write_conf(res)
+            if res:
+                self.log.logger.debug(res)
+                self.assertEqual(kwargs.get('expected_result'), res[0].get('msg'), msg=f'\n失败用例：{kwargs.get("case")}\n服务器返回内容：{res[0]}\n响应时间：{res[1]}\n状态码：{res[2]}')
+                if res[0].get('msg') == '操作成功':
+                    self.log.logger.info('登录成功，token信息更新至token.ini文件')
+                    self.write_c.write_conf(res[0])
+            else:
+                raise
         except Exception as e:
             self.log.logger.info(e)
             raise e
         else:
-            self.log.logger.info(f'"{kwargs.get("case")}"用例执行通过')
+            self.log.logger.info(f'"{kwargs.get("case")}"用例执行通过,响应时间：{res[1]},状态码{res[2]}')
 
 
 if __name__ == '__main__':
-    suite = unittest.makeSuite(LoginTestCase, 'test')
+    suite = unittest.makeSuite(LoginTestCase, 'test*')
     with open(r'E:\Auto-interface\report\test_report.html', 'wb') as fp:
         runner = HTMLTestRunner_Chart.HTMLTestRunner(
             stream=fp,

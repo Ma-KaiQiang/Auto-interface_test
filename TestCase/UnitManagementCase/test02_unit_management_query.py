@@ -31,7 +31,7 @@ class UnitManangementQuery(unittest.TestCase):
         cls.unit_uuid_file = ReadConf().get_conf('UNITMANAGEMENTUUID').get('unit_management_uuid')
         cls.unit_management_b = UnitManagementBusniess()
         cls.replace_unit_query = ReplaceData(unit_query_data, unit_case_file, '单位管理查找')
-        cls.new_infrastructure_uuid_data=GetExcelCase(infrastructure_uuid_file, '楼栋房屋').get_dict_data
+        cls.new_infrastructure_uuid_data = GetExcelCase(infrastructure_uuid_file, '楼栋房屋').get_dict_data
         cls.replace_unit_query.replace_data_sheet(cls.new_infrastructure_uuid_data)
         cls.new_unit_query_data = GetExcelCase(unit_case_file, '单位管理查找').get_dict_data
 
@@ -43,14 +43,17 @@ class UnitManangementQuery(unittest.TestCase):
         try:
             new_kwargs = self.new_unit_query_data[kwargs.get('row') - 1]
             actual_result = self.unit_management_b.unit_query_busniess(**new_kwargs)
-            self.log.logger.debug(f'actucal_result:{actual_result}')
-            self.assertTrue(actual_result, f'{new_kwargs.get("case")}请求失败')
-            self.assertTrue(new_kwargs.get('expected_result') in str(actual_result), msg=f'失败用例：{new_kwargs.get("case")}\n服务器返回内容：{actual_result}\n状态码：')
+            self.log.logger.debug(f'actucal_result:{actual_result[0]}')
+            if actual_result:
+                self.assertTrue(new_kwargs.get('expected_result') in str(actual_result[0]), msg=f'失败用例：{kwargs.get("case")}\n服务器返回内容：'
+                                                                                                f'{actual_result[0]}\n响应时间：{actual_result[1]}\n状态码{actual_result[2]}')
+            else:
+                raise
         except Exception as e:
             self.log.logger.info(e)
             raise e
         else:
-            self.log.logger.info(f'"{kwargs.get("case")}"用例执行通过')
+            self.log.logger.info(f'"{kwargs.get("case")}"用例执行通过,响应时间：{actual_result[1]},状态码{actual_result[2]}')
 
 
 if __name__ == '__main__':

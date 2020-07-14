@@ -22,7 +22,7 @@ class InfrastructureBusniess():
 
         response = self.res.method(**kwargs)
         # 获取行数
-        uuid = self.res_filter.data_filter(text=str(response), uuid='uuid', group=1)
+        uuid = self.res_filter.data_filter(text=str(response[0]), uuid='uuid', group=1)
         num = kwargs.get('row')
         if kwargs.get('replace'):
             replace = ReplaceData(old_excel_data, write_file_name=r'E:\Auto-interface\data\infrastructure\infrastructure_case.xlsx', write_sheet_name='楼栋房屋新增')
@@ -31,27 +31,27 @@ class InfrastructureBusniess():
         if response:
             # 将uuid写入到excel中
             self.write_excel.write(num + 1, 1, str(uuid))
-            return response.get('msg')
+            return response
         else:
             return False
 
     def infrastructure_query_busniess(self, **kwargs):
         response = self.res.method(**kwargs)
         if response:
-            return response['data']['list'][0]['address']
+            return response
         else:
             return False
 
     def infrastructure_modify_busniess(self, **kwargs):
         response = self.res.method(**kwargs)
         if response:
-            return response.get('msg')
+            return response
         else:
             return False
 
     def infrastructure_delete_busniess(self, **kwargs):
         response = self.res.method(**kwargs)
         if response:
-            return response.get('data')
+            return response
         else:
             return False

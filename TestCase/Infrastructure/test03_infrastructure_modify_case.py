@@ -41,13 +41,17 @@ class InfrastructureModifyCase(unittest.TestCase):
         try:
             modify_data = self.new_infrastructure_modify_data[kwargs.get('row') - 1]
             actual_result = self.infrastructrue_b.infrastructure_modify_busniess(**modify_data)
-            self.assertTrue(actual_result, f'{kwargs.get("case")}请求失败')
-            self.assertEqual(kwargs.get('expected_result'), actual_result, msg=f'失败用例：{kwargs.get("case")}\n服务器返回内容：{actual_result}')
+            if actual_result:
+                self.assertEqual(kwargs.get('expected_result'), actual_result[0].get('msg'), msg=f'失败用例：{kwargs.get("case")}\n服务器返回内容：'
+                                                                                                 f'{actual_result[0]}\n响应时间：{actual_result[1]}\n状态码{actual_result[2]}')
+            else:
+                raise
         except Exception as e:
             self.log.logger.info(e)
             raise e
         else:
-            self.log.logger.info(f'"{kwargs.get("case")}"用例执行通过')
+            self.log.logger.info(f'"{kwargs.get("case")}"用例执行通过,响应时间：{actual_result[1]},状态码{actual_result[2]}')
+
 
 
 if __name__ == '__main__':

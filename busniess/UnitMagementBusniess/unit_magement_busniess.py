@@ -21,9 +21,9 @@ class UnitManagementBusniess():
     def unit_add_busniess(self, **kwargs):
         response = self.res.method(**kwargs)
         if response:
-            if response.get('data').get('uuid'):
+            if response[0].get('data').get('uuid'):
                 num = kwargs.get('row')
-                compony_uuid = self.res_filter.data_filter(text=str(response), uuid='uuid', group=1)
+                compony_uuid = self.res_filter.data_filter(text=str(response[0]), uuid='uuid', group=1)
                 self.write_excel.write(num + 1, 1, str(compony_uuid))
             return response
         else:

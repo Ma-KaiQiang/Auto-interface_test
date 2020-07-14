@@ -44,14 +44,16 @@ class UnitManangementAdd(unittest.TestCase):
         self.log.logger.debug(kwargs)
         try:
             actual_result = self.unit_management_b.unit_add_busniess(**kwargs)
-            self.assertTrue(actual_result, f'{kwargs.get("case")}请求失败')
-            self.assertEqual(kwargs.get('expected_result'), actual_result.get("msg"), msg=f'失败用例：{kwargs.get("case")}\n服务器返回内容：{actual_result}')
-
+            if actual_result:
+                self.assertEqual(kwargs.get('expected_result'), actual_result[0].get("msg"), msg=f'失败用例：{kwargs.get("case")}\n服务器返回内容：'
+                                                                                                 f'{actual_result[0]}\n响应时间：{actual_result[1]}\n状态码{actual_result[2]}')
+            else:
+                raise
         except Exception as e:
             self.log.logger.info(e)
             raise e
         else:
-            self.log.logger.info(f'"{kwargs.get("case")}"用例执行通过')
+            self.log.logger.info(f'"{kwargs.get("case")}"用例执行通过,响应时间：{actual_result[1]},状态码{actual_result[2]}')
 
     def tearDown(self) -> None:
         time.sleep(2)

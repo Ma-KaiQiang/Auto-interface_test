@@ -38,14 +38,17 @@ class InfrastructureAddCase(unittest.TestCase):
             excel_data_1 = GetExcelCase(fileName=r'E:\Auto-interface\data\infrastructure\infrastructure_case.xlsx', sheetName='楼栋房屋新增').get_dict_data[col_num]
             self.log.logger.debug(f'获取的测试数据：{excel_data_1}')
             actual_result = self.infrastructrue_b.infrastructure_add_busniess(add_excel_data, **excel_data_1)
-            self.assertTrue(actual_result, f'{kwargs.get("case")}请求失败')
-            self.assertEqual(excel_data_1.get('expected_result'), actual_result, msg=f'失败用例：{kwargs.get("case")}\n服务器返回内容：{actual_result}')
+            if actual_result:
+                self.assertEqual(excel_data_1.get('expected_result'), actual_result[0].get('msg'), msg=f'失败用例：{kwargs.get("case")}\n服务器返回内容：'
+                                                                                                       f'{actual_result[0]}\n响应时间：{actual_result[1]}\n状态码{actual_result[2]}')
 
+            else:
+                raise
         except Exception as e:
             self.log.logger.info(e)
             raise e
         else:
-            self.log.logger.info(f'"{excel_data_1.get("case")}"用例执行通过')
+            self.log.logger.info(f'"{kwargs.get("case")}"用例执行通过,响应时间：{actual_result[1]},状态码{actual_result[2]}')
 
 
 if __name__ == '__main__':

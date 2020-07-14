@@ -30,21 +30,21 @@ class ResponseFunc():
             res = self.requests_func.get(url=url, params=params, headers=headers)
             self.log.logger.debug(f'返回响应字串:{res.text}')
             if res:
-                return json.loads(res.text)
+                return [json.loads(res.text), res.elapsed.total_seconds(), res.status_code]
             else:
                 return False
         elif requests_type == 'post':
             res = self.requests_func.post(url=url, params=params, headers=headers, body=body, json=json_)
             self.log.logger.debug(f'返回响应字串:{res.text}')
             if res:
-                return json.loads(res.text)
+                return [json.loads(res.text), res.elapsed.total_seconds(), res.status_code]
             else:
                 return False
         elif requests_type == 'put':
             res = self.requests_func.put(url=url, params=params, headers=headers, body=body, json=json_)
             if res:
                 self.log.logger.debug('返回响应字串')
-                return json.loads(res.text)
+                return [json.loads(res.text), res.elapsed.total_seconds(), res.status_code]
             else:
                 return False
         elif requests_type == 'delete':
@@ -53,9 +53,9 @@ class ResponseFunc():
             self.log.logger.debug('返回响应字串')
             if res:
 
-                return json.loads(res.text)
+                return [json.loads(res.text), res.elapsed.total_seconds(), res.status_code]
             else:
-                return False
+                return [False, res.elapsed.total_seconds(), res.status_code]
 
 
 if __name__ == '__main__':
